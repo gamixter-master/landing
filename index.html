@@ -10,6 +10,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
   <style>
     :root {
       --bg: #0b0b0b;
@@ -53,7 +54,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      height: 96px; /* Approximate height for calculation */
+      height: 96px; 
       box-sizing: border-box;
     }
 
@@ -90,8 +91,7 @@
 
     .hero {
       padding: 0; 
-      min-height: calc(100vh - 96px); /* Adjusted for navbar height */
-      /* Or try min-height: 92vh; if calc is problematic or for fine-tuning */
+      min-height: calc(100vh - 96px); 
       display: flex;
       align-items: center; 
       background: var(--bg); 
@@ -107,8 +107,8 @@
       max-width: 1200px;  
       width: 95%; 
       margin: 0 auto;
-      padding: 40px 20px; /* UPDATED padding */
-      gap: 30px; /* UPDATED gap */
+      padding: 40px 20px; 
+      gap: 30px; 
       position: relative; 
       z-index: 2; 
     }
@@ -121,9 +121,9 @@
     }
 
     .hero .text-block h1 {  
-      font-size: 48px; /* UPDATED font-size */
+      font-size: 48px; 
       font-weight: 700;
-      margin-bottom: 20px; /* UPDATED margin */
+      margin-bottom: 20px; 
       line-height: 1.15;
     }
     .hero .hero-title-line {
@@ -131,20 +131,20 @@
     }
 
     .hero .subhead {
-      font-size: 17px; /* UPDATED font-size */
+      font-size: 17px; 
       color: var(--subtext);
-      line-height: 1.55; /* UPDATED line-height */
-      margin-bottom: 24px; /* UPDATED margin */
+      line-height: 1.55; 
+      margin-bottom: 24px; 
     }
 
     .hero .benefits {
       list-style: none;
       padding: 0;
-      margin: 0 0 28px 0; /* UPDATED margin */
-      font-size: 15px; /* UPDATED font-size */
+      margin: 0 0 28px 0; 
+      font-size: 15px; 
     }
     .hero .benefits li { 
-        margin-bottom: 10px; /* UPDATED margin */
+        margin-bottom: 10px; 
         color: var(--subtext); 
     }
     .hero .benefits li strong { color: var(--text); }
@@ -169,7 +169,7 @@
     .hero .visual img {
       max-width: 100%; 
       height: auto; 
-      max-height: 75vh; /* Adjusted max-height to help fit content */
+      max-height: 75vh; 
       border-radius: 16px; 
       object-fit: contain; 
     }
@@ -582,7 +582,7 @@
         width: 90%;
       }
       .hero .text-block h1, .hero .hero-title-line { 
-        font-size: 42px; /* Adjusted */
+        font-size: 42px; 
       }
       .hero .text-block {
         flex-basis: 50%;
@@ -594,7 +594,7 @@
     }
 
     @media (max-width: 768px) {
-      .navbar { padding: 15px 20px; height: auto; /* Allow height to adjust */ }
+      .navbar { padding: 15px 20px; height: auto; }
       .nav-links { display: none; }
       .nav-logo img { height: 40px; }
 
@@ -606,18 +606,18 @@
       .hero .container {
         flex-direction: column; 
         text-align: center; 
-        padding: 20px 15px; /* Further reduced padding */
+        padding: 20px 15px; 
         width: 90%;
       }
       .hero .visual {
         order: -1; 
-        margin-bottom: 20px; /* Reduced margin */
+        margin-bottom: 20px; 
         width: 100%; 
-        max-width: 300px; /* Adjusted */
+        max-width: 300px; 
         flex-basis: auto;
       }
       .hero .visual img {
-        max-height: 50vh; /* Adjusted */
+        max-height: 50vh; 
       }
       .hero .text-block {
         order: 2; 
@@ -626,15 +626,15 @@
         flex-basis: auto;
       }
       .hero .text-block h1, .hero .hero-title-line {
-        font-size: 30px; /* Adjusted */
+        font-size: 30px; 
       }
       .hero .subhead {
-        font-size: 15px; /* Adjusted */
-        margin-bottom: 20px; /* Adjusted */
+        font-size: 15px; 
+        margin-bottom: 20px; 
       }
        .hero .benefits {
-        margin: 0 0 24px 0; /* Adjusted */
-        font-size: 14px; /* Adjusted */
+        margin: 0 0 24px 0; 
+        font-size: 14px; 
       }
       .hero .benefits li { 
         margin-bottom: 8px; 
@@ -717,7 +717,7 @@
           <li>⚡ <strong>Launch Ready:</strong> Pre-built for &lt;24h deployment, no CRM changes needed.</li>
         </ul>
         <div class="cta-row">
-          <button class="primary-cta open-popup-trigger">🚀 Book a Demo</button> 
+          <button class="primary-cta open-popup-trigger">🚀 Book a Demo</button> <button class="secondary-cta">▶ Watch Demo</button>
         </div>
         <p class="microcopy">Activate pre-built engagement tools. See results tomorrow.</p>
       </div>
@@ -834,7 +834,7 @@
 <div id="popup-form" class="popup">
   <div class="popup-content">
     <button id="close-popup" class="close-popup">&times;</button> <h2>Book a Demo</h2>
-    <form id="demo-form" action="https://formsubmit.co/hello@gamixter.com" method="POST"> 
+    <form id="demo-form" action="https://usebasin.com/f/553146f392c9" method="POST"> 
       <input type="hidden" name="_subject" value="New Demo Request from Gamixter Website!">
       <div class="form-group">
         <label for="company-name">Company Name</label>
@@ -863,7 +863,7 @@
   const popup = document.getElementById("popup-form");
   const openPopupButtons = document.querySelectorAll(".open-popup-trigger");
   const closePopupButton = document.getElementById("close-popup");
-  const formStatusDiv = document.getElementById('form-status');  
+  const formStatusDiv = document.getElementById('form-status');  // Defined here for broader scope if needed
 
   openPopupButtons.forEach(button => {
     button.addEventListener("click", (event) => {
@@ -937,7 +937,7 @@
   cardsToAnimate.forEach((card, index) => {
     card.style.opacity = '0';  
     card.style.transform = 'translateY(30px)';  
-    card.style.transition = 'opacity 0.6s ease-out ' + (index * 0.08) + 's, transform 0.6s ease-out ' + (index * 0.08) + 's'; // Staggered delay
+    card.style.transition = 'opacity 0.6s ease-out ' + (index * 0.08) + 's, transform 0.6s ease-out ' + (index * 0.08) + 's';
     scrollObserver.observe(card);
   });
 
@@ -951,17 +951,17 @@
       let siteValue = siteInput.value.trim();
       if (siteValue && !siteValue.startsWith('http://') && !siteValue.startsWith('https://')) {
         siteValue = 'https://' + siteValue;
-        // No need to update siteInput.value here if we use formData.set()
       }
       
       const formData = new FormData(demoForm);
-      // Ensure the potentially modified siteValue is what's sent
       if (siteInput.value.trim() !== siteValue) {
         formData.set('site', siteValue);
       }
 
       const submitButton = demoForm.querySelector('.submit-btn');
       const originalButtonText = submitButton.textContent;
+      // formStatusDiv is already defined outside this event listener if needed globally, or keep it scoped if only used here.
+      // const formStatusDiv = document.getElementById('form-status'); // Re-declaring here makes it local
 
       formStatusDiv.style.display = 'none'; 
       formStatusDiv.className = '';  
@@ -978,33 +978,34 @@
       })
       .then(response => {
         if (response.ok) {
-          const contentType = response.headers.get("content-type");
-          if (contentType && contentType.indexOf("application/json") !== -1) {
-            return response.json();
-          } else {
-            console.log("Response was OK but not JSON. Assuming successful redirect by FormSubmit.");
-            return { success: true, redirected: true }; 
-          }
+          return response.json(); 
         } else {
-          return response.text().then(text => {
-            try {
-              const data = JSON.parse(text);
-              throw new Error(data.message || 'Submission failed with status: ' + response.status);
-            } catch (e) {
-              console.error("Form submission failed. Server response (text snippet):", text.substring(0, 200));
-              throw new Error('Submission failed. Please check form configuration or try again. Status: ' + response.status);
+          return response.json().then(errorData => {
+            let message = "Submission failed.";
+            if (errorData && errorData.errors) {
+              message = Object.values(errorData.errors).flat().join(' ');
+            } else if (errorData && errorData.error) {
+              message = errorData.error;
+            } else if (errorData && errorData.message) {
+               message = errorData.message;
+            } else {
+              message = `Server error: ${response.status}. Please try again.`;
             }
+            return Promise.reject(new Error(message));
+          }).catch(parsingError => {
+              console.error("Failed to parse error JSON or non-JSON error response:", parsingError);
+              throw new Error(`Submission failed. Status: ${response.status}. Please try again.`);
           });
         }
       })
       .then(data => {  
-        if (data.success || data.redirected || (data.ok && typeof data.ok === 'string' && data.ok.toLowerCase() === 'true')) {
+        if (data.success) { 
             formStatusDiv.textContent = 'Thank you! Your demo request has been sent.';
             formStatusDiv.className = 'success';  
             formStatusDiv.style.display = 'block';
             demoForm.reset();  
         } else {
-            throw new Error(data.message || 'Failed to submit the form. Please try again.');
+            throw new Error(data.message || 'Submission was processed but reported an issue.');
         }
       })
       .catch(error => {
