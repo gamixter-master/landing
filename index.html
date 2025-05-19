@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gamixter – Pre-Built Gamification | Live in 1 Day</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <style>
     :root {
       --bg: #0b0b0b;
@@ -48,6 +53,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      height: 96px; /* Approximate height for calculation */
+      box-sizing: border-box;
     }
 
     .nav-logo img {
@@ -83,7 +90,8 @@
 
     .hero {
       padding: 0; 
-      min-height: 100vh; 
+      min-height: calc(100vh - 96px); /* Adjusted for navbar height */
+      /* Or try min-height: 92vh; if calc is problematic or for fine-tuning */
       display: flex;
       align-items: center; 
       background: var(--bg); 
@@ -99,8 +107,8 @@
       max-width: 1200px;  
       width: 95%; 
       margin: 0 auto;
-      padding: 60px 20px; 
-      gap: 40px;
+      padding: 40px 20px; /* UPDATED padding */
+      gap: 30px; /* UPDATED gap */
       position: relative; 
       z-index: 2; 
     }
@@ -113,9 +121,9 @@
     }
 
     .hero .text-block h1 {  
-      font-size: 52px; 
+      font-size: 48px; /* UPDATED font-size */
       font-weight: 700;
-      margin-bottom: 24px; 
+      margin-bottom: 20px; /* UPDATED margin */
       line-height: 1.15;
     }
     .hero .hero-title-line {
@@ -123,19 +131,22 @@
     }
 
     .hero .subhead {
-      font-size: 18px;
+      font-size: 17px; /* UPDATED font-size */
       color: var(--subtext);
-      line-height: 1.6;
-      margin-bottom: 28px; 
+      line-height: 1.55; /* UPDATED line-height */
+      margin-bottom: 24px; /* UPDATED margin */
     }
 
     .hero .benefits {
       list-style: none;
       padding: 0;
-      margin: 0 0 32px 0; 
-      font-size: 16px;
+      margin: 0 0 28px 0; /* UPDATED margin */
+      font-size: 15px; /* UPDATED font-size */
     }
-    .hero .benefits li { margin-bottom: 12px; color: var(--subtext); }
+    .hero .benefits li { 
+        margin-bottom: 10px; /* UPDATED margin */
+        color: var(--subtext); 
+    }
     .hero .benefits li strong { color: var(--text); }
 
     .hero .cta-row { 
@@ -158,7 +169,7 @@
     .hero .visual img {
       max-width: 100%; 
       height: auto; 
-      max-height: 85vh; 
+      max-height: 75vh; /* Adjusted max-height to help fit content */
       border-radius: 16px; 
       object-fit: contain; 
     }
@@ -201,15 +212,15 @@
       flex-direction: column;
       align-items: center;  
       text-align: center;  
-      transition: transform 0.4s ease, box-shadow 0.4s ease; /* UPDATED transition */
+      transition: transform 0.4s ease, box-shadow 0.4s ease; 
       min-height: 220px;  
     }
 
     .card:hover {
-      transform: translateY(-8px) scale(1.03); /* UPDATED transform */
-      box-shadow: 0 0 25px rgba(0, 255, 163, 0.5), /* Outer glow --accent-color-1 */
-                  0 0 35px rgba(0, 255, 163, 0.3), /* Softer, wider glow --accent-color-1 */
-                  0 0 15px rgba(0, 217, 255, 0.2); /* Subtle touch of --accent-color-2 */
+      transform: translateY(-8px) scale(1.03); 
+      box-shadow: 0 0 25px rgba(0, 255, 163, 0.5), 
+                  0 0 35px rgba(0, 255, 163, 0.3), 
+                  0 0 15px rgba(0, 217, 255, 0.2);
     }
 
     .card .icon {  
@@ -224,11 +235,11 @@
       justify-content: center;
       margin-bottom: 20px;  
       flex-shrink: 0;
-      transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* UPDATED: Added transition for icon */
+      transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; 
     }
 
     .card:hover .icon {
-      transform: scale(1.15) rotate(5deg); /* UPDATED: Icon animation on hover */
+      transform: scale(1.15) rotate(5deg); 
     }
 
     .card h3 {
@@ -250,9 +261,9 @@
       border-color: transparent; 
     }
     .card.special:hover {
-        transform: translateY(-8px) scale(1.03); /* Keep consistent transform */
-        box-shadow: 0 0 25px rgba(0,0,0,0.3); /* Different shadow for special card */
-        border-color: transparent; /* Ensure no colored border from default card hover if styles cascade */
+        transform: translateY(-8px) scale(1.03); 
+        box-shadow: 0 0 25px rgba(0,0,0,0.3); 
+        border-color: transparent; 
     }
 
     .card.special h3,
@@ -265,7 +276,7 @@
       color: #000;
     }
     .card.special:hover .icon {
-        transform: scale(1.15) rotate(5deg); /* Consistent icon animation */
+        transform: scale(1.15) rotate(5deg); 
     }
     
     .psychology-section {  
@@ -571,7 +582,7 @@
         width: 90%;
       }
       .hero .text-block h1, .hero .hero-title-line { 
-        font-size: 44px; 
+        font-size: 42px; /* Adjusted */
       }
       .hero .text-block {
         flex-basis: 50%;
@@ -583,9 +594,9 @@
     }
 
     @media (max-width: 768px) {
-      .navbar { padding: 15px 20px; }
+      .navbar { padding: 15px 20px; height: auto; /* Allow height to adjust */ }
       .nav-links { display: none; }
-      .nav-logo img { height: 40px; /* UPDATED: Mobile logo size */ }
+      .nav-logo img { height: 40px; }
 
       .hero {
         min-height: auto; 
@@ -595,18 +606,18 @@
       .hero .container {
         flex-direction: column; 
         text-align: center; 
-        padding: 30px 15px;
+        padding: 20px 15px; /* Further reduced padding */
         width: 90%;
       }
       .hero .visual {
         order: -1; 
-        margin-bottom: 30px;
+        margin-bottom: 20px; /* Reduced margin */
         width: 100%; 
-        max-width: 320px; 
+        max-width: 300px; /* Adjusted */
         flex-basis: auto;
       }
       .hero .visual img {
-        max-height: 55vh; 
+        max-height: 50vh; /* Adjusted */
       }
       .hero .text-block {
         order: 2; 
@@ -615,11 +626,19 @@
         flex-basis: auto;
       }
       .hero .text-block h1, .hero .hero-title-line {
-        font-size: 32px; 
+        font-size: 30px; /* Adjusted */
       }
       .hero .subhead {
-        font-size: 16px;
+        font-size: 15px; /* Adjusted */
+        margin-bottom: 20px; /* Adjusted */
       }
+       .hero .benefits {
+        margin: 0 0 24px 0; /* Adjusted */
+        font-size: 14px; /* Adjusted */
+      }
+      .hero .benefits li { 
+        margin-bottom: 8px; 
+      } 
       .hero .cta-row {
         flex-direction: column;
         align-items: center; 
@@ -643,9 +662,8 @@
       .psychology-card h3 { font-size: 20px; }
 
       #trusted-by .grid {
-        /* Ensure it adapts if there are only 3 partners */
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-        max-width: 800px; /* Adjust if needed to center 3 items better */
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+        max-width: 800px; 
         gap: 20px;
       }
        .partner img { max-height: 40px; }
@@ -699,7 +717,7 @@
           <li>⚡ <strong>Launch Ready:</strong> Pre-built for &lt;24h deployment, no CRM changes needed.</li>
         </ul>
         <div class="cta-row">
-          <button class="primary-cta open-popup-trigger">🚀 Book a Demo</button> <button class="secondary-cta">▶ Watch Demo</button>
+          <button class="primary-cta open-popup-trigger">🚀 Book a Demo</button> 
         </div>
         <p class="microcopy">Activate pre-built engagement tools. See results tomorrow.</p>
       </div>
@@ -831,7 +849,8 @@
         <input type="email" id="email" name="email" required />
       </div>
       <div class="form-group">
-        <label for="site">Your Website</label> <input type="url" id="site" name="site" placeholder="https://example.com" required />
+        <label for="site">Your Website</label> 
+        <input type="text" id="site" name="site" placeholder="example.com" required pattern=".*\..*" title="Please enter a valid domain name (e.g., example.com)">
       </div>
       <button type="submit" class="submit-btn">Submit Request</button>
     </form>
@@ -908,8 +927,6 @@
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
-        // Initial entrance animation transition is set via JS for a slight delay
-        // entry.target.style.transition = 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'; 
         observer.unobserve(entry.target);  
       }
     });
@@ -920,8 +937,7 @@
   cardsToAnimate.forEach((card, index) => {
     card.style.opacity = '0';  
     card.style.transform = 'translateY(30px)';  
-    // Add transition style directly for the entrance animation
-    card.style.transition = 'opacity 0.6s ease-out ' + (index * 0.1) + 's, transform 0.6s ease-out ' + (index * 0.1) + 's';
+    card.style.transition = 'opacity 0.6s ease-out ' + (index * 0.08) + 's, transform 0.6s ease-out ' + (index * 0.08) + 's'; // Staggered delay
     scrollObserver.observe(card);
   });
 
@@ -931,7 +947,19 @@
     demoForm.addEventListener('submit', function(event) {
       event.preventDefault();  
 
+      const siteInput = document.getElementById('site');
+      let siteValue = siteInput.value.trim();
+      if (siteValue && !siteValue.startsWith('http://') && !siteValue.startsWith('https://')) {
+        siteValue = 'https://' + siteValue;
+        // No need to update siteInput.value here if we use formData.set()
+      }
+      
       const formData = new FormData(demoForm);
+      // Ensure the potentially modified siteValue is what's sent
+      if (siteInput.value.trim() !== siteValue) {
+        formData.set('site', siteValue);
+      }
+
       const submitButton = demoForm.querySelector('.submit-btn');
       const originalButtonText = submitButton.textContent;
 
@@ -949,22 +977,28 @@
         }
       })
       .then(response => {
-        if (response.ok) { 
-           try {
-                return response.json(); 
-            } catch (e) {
-                return { success: true, message: "Form submitted successfully (possibly via redirect)." };
-            }
+        if (response.ok) {
+          const contentType = response.headers.get("content-type");
+          if (contentType && contentType.indexOf("application/json") !== -1) {
+            return response.json();
+          } else {
+            console.log("Response was OK but not JSON. Assuming successful redirect by FormSubmit.");
+            return { success: true, redirected: true }; 
+          }
         } else {
-          return response.json().then(data => {
-            throw new Error(data.message || 'Submission failed. Please try again.');
-          }).catch(jsonParseError => { 
-            throw new Error('Server error ' + response.status + '. Please try again.');
+          return response.text().then(text => {
+            try {
+              const data = JSON.parse(text);
+              throw new Error(data.message || 'Submission failed with status: ' + response.status);
+            } catch (e) {
+              console.error("Form submission failed. Server response (text snippet):", text.substring(0, 200));
+              throw new Error('Submission failed. Please check form configuration or try again. Status: ' + response.status);
+            }
           });
         }
       })
       .then(data => {  
-        if (data.success || data.ok || (typeof data.success === 'string' && data.success.toLowerCase() === 'true')) {
+        if (data.success || data.redirected || (data.ok && typeof data.ok === 'string' && data.ok.toLowerCase() === 'true')) {
             formStatusDiv.textContent = 'Thank you! Your demo request has been sent.';
             formStatusDiv.className = 'success';  
             formStatusDiv.style.display = 'block';
