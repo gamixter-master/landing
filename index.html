@@ -860,10 +860,13 @@
 
 <script>
   // Popup Logic
+ <script>
+  // Popup Logic
   const popup = document.getElementById("popup-form");
   const openPopupButtons = document.querySelectorAll(".open-popup-trigger");
   const closePopupButton = document.getElementById("close-popup");
-  const formStatusDiv = document.getElementById('form-status');  // Defined here for broader scope if needed
+  const formStatusDiv = document.getElementById('form-status');
+  const demoForm = document.getElementById('demo-form'); // Get the form element once
 
   openPopupButtons.forEach(button => {
     button.addEventListener("click", (event) => {
@@ -871,8 +874,8 @@
       popup.style.display = "flex";
       formStatusDiv.style.display = 'none';  
       formStatusDiv.className = '';  
-      const demoFormElement = document.getElementById('demo-form');
-      if (demoFormElement) demoFormElement.style.display = 'block'; 
+      if (demoForm) demoForm.style.display = 'block'; // Show the form when popup opens
+      if (demoForm) demoForm.reset(); // Optionally reset form on open
     });
   });
 
@@ -941,7 +944,7 @@
     scrollObserver.observe(card);
   });
 
-  const demoForm = document.getElementById('demo-form');
+  // const demoForm = document.getElementById('demo-form'); // Moved to top for wider scope
 
   if (demoForm) {
     demoForm.addEventListener('submit', function(event) {
@@ -960,9 +963,7 @@
 
       const submitButton = demoForm.querySelector('.submit-btn');
       const originalButtonText = submitButton.textContent;
-      // formStatusDiv is already defined outside this event listener if needed globally, or keep it scoped if only used here.
-      // const formStatusDiv = document.getElementById('form-status'); // Re-declaring here makes it local
-
+      
       formStatusDiv.style.display = 'none'; 
       formStatusDiv.className = '';  
       
@@ -1000,10 +1001,13 @@
       })
       .then(data => {  
         if (data.success) { 
+            demoForm.style.display = 'none'; // HIDE THE FORM
+
             formStatusDiv.textContent = 'Thank you! Your demo request has been sent.';
             formStatusDiv.className = 'success';  
-            formStatusDiv.style.display = 'block';
-            demoForm.reset();  
+            formStatusDiv.style.display = 'block'; // Show the success message
+            
+            // demoForm.reset(); // Resetting the (now hidden) form is still okay
         } else {
             throw new Error(data.message || 'Submission was processed but reported an issue.');
         }
@@ -1012,6 +1016,9 @@
         formStatusDiv.textContent = 'Error: ' + error.message;
         formStatusDiv.className = 'error';  
         formStatusDiv.style.display = 'block';
+        // Ensure form is still visible if there was an error during submission attempt.
+        // It should already be visible unless an error happened AFTER a successful 'data.success' then() block, which is unlikely.
+        // demoForm.style.display = 'block'; // Usually not needed here, submitButton.disabled = false handles re-try
       })
       .finally(() => {
         submitButton.disabled = false;
@@ -1019,7 +1026,6 @@
       });
     });
   }
-
 </script>
 
 </body>
