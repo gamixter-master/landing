@@ -1,1 +1,991 @@
-<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">ol{margin:0;padding:0}table td,table th{padding:0}.c0{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c1{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c3{background-color:#ffffff;max-width:451.4pt;padding:72pt 72pt 72pt 72pt}.c2{height:11pt}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style></head><body class="c3 doc-content"><p class="c1"><span class="c0">&lt;!DOCTYPE html&gt;</span></p><p class="c1"><span class="c0">&lt;html lang=&quot;en&quot; class=&quot;dark&quot;&gt;</span></p><p class="c1"><span class="c0">&lt;head&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;meta charset=&quot;UTF-8&quot; /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;title&gt;Gamixter &ndash; Pre-Built Gamification | Live in 1 Day&lt;/title&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;style&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; :root {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --bg: #0b0b0b;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --text: #ffffff;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --subtext: #b0b0b0;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --accent-gradient: linear-gradient(135deg, #00ffa3, #00d9ff);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --accent-color-1: #00ffa3;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --accent-color-2: #00d9ff;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --border: #1a1a1a;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --card-bg: #151515;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --card-border: #1f1f1f; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --popup-bg: #2e2e2e;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; --error-color: #ff4d4d; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; body {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin: 0;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Manrope&#39;, sans-serif;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--bg);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--text);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; scroll-behavior: smooth;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; overflow-x: hidden;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; a {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--subtext);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-decoration: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: color 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; a:hover {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--text);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .navbar {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; justify-content: space-between;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 20px 40px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--bg);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: sticky;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; top: 0;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; z-index: 1000;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-logo img {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; height: 56px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; width: auto;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: block;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-links {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .nav-links a {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-left: 24px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 15px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .demo-cta-nav {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 10px 20px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--accent-gradient);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-radius: 6px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: #000;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-left: 24px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: transform 0.3s ease, box-shadow 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .demo-cta-nav:hover {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: #000;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transform: scale(1.05);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; box-shadow: 0 0 10px var(--accent-color-1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 0; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; min-height: 100vh; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--bg); </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; overflow: hidden; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: relative; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .container {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; flex-direction: row; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; justify-content: space-between; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 1200px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; width: 95%; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin: 0 auto;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 60px 20px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; gap: 40px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: relative; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; z-index: 2; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .text-block {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; flex: 1 1 45%; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 580px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; z-index: 2; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: relative; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .text-block h1 { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 52px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 700;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-bottom: 24px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; line-height: 1.15;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .hero-title-line {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; display: block;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .subhead {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 18px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--subtext);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; line-height: 1.6;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-bottom: 28px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .benefits {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; list-style: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 0;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin: 0 0 32px 0; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 16px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .benefits li { margin-bottom: 12px; color: var(--subtext); }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .benefits li strong { color: var(--text); }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .cta-row { </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; gap: 16px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; margin-bottom: 16px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; align-items: center; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .microcopy { font-size: 14px; color: var(--subtext); margin-bottom: 0; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .visual {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; flex: 1 1 55%; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; justify-content: center; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; height: auto; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: relative;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .hero .visual img {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 100%; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; height: auto; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-height: 85vh; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-radius: 16px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; object-fit: contain; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .section {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 80px 40px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-align: center; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .section h2 {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 36px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 700;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-bottom: 16px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--text); &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .section p.subtext { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 18px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--subtext);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 640px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin: 0 auto 40px auto; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; line-height: 1.6;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .grid {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: grid;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; gap: 24px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 1200px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin: 0 auto;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-align: left; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--card-bg);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border: 1px solid var(--card-border);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-radius: 16px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 28px 24px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; flex-direction: column;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-align: center; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: transform 0.4s ease, box-shadow 0.4s ease; /* UPDATED transition */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; min-height: 220px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card:hover {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transform: translateY(-8px) scale(1.03); /* UPDATED transform */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; box-shadow: 0 0 25px rgba(0, 255, 163, 0.5), /* Outer glow --accent-color-1 */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 0 35px rgba(0, 255, 163, 0.3), /* Softer, wider glow --accent-color-1 */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 0 15px rgba(0, 217, 255, 0.2); /* Subtle touch of --accent-color-2 */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card .icon { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 30px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; width: 56px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; height: 56px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-radius: 50%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: rgba(0, 255, 163, 0.1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--accent-color-1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; justify-content: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-bottom: 20px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; flex-shrink: 0;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* UPDATED: Added transition for icon */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card:hover .icon {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transform: scale(1.15) rotate(5deg); /* UPDATED: Icon animation on hover */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card h3 {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 20px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-bottom: 12px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--text);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card p {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 15px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--subtext);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; line-height: 1.5;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card.special { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--accent-gradient);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: #000;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-color: transparent; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card.special:hover {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(-8px) scale(1.03); /* Keep consistent transform */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 0 25px rgba(0,0,0,0.3); /* Different shadow for special card */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; border-color: transparent; /* Ensure no colored border from default card hover if styles cascade */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card.special h3,</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card.special p {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: #000;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card.special .icon {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: rgba(0, 0, 0, 0.1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: #000;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .card.special:hover .icon {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; transform: scale(1.15) rotate(5deg); /* Consistent icon animation */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .psychology-section { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: #0e0e0e; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .psychology-cards-container { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: grid; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; gap: 24px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 1200px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin: 0 auto;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .psychology-card {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: #222; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 32px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-radius: 12px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-align: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: relative;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; overflow: hidden; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .psychology-card:hover {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transform: translateY(-5px) scale(1.02); &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; box-shadow: 0 0 25px rgba(0, 255, 163, 0.25);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background-color: var(--accent-color-1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .psychology-card:hover .icon {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transform: rotate(15deg) scale(1.1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: rgba(0,0,0,0.15);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: #000;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .psychology-card:hover h3,</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .psychology-card:hover p {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: #000;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .psychology-card .icon { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 32px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; width: 56px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; height: 56px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin: 0 auto 20px auto;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: rgba(0, 255, 163, 0.1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--accent-color-1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-radius: 50%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; justify-content: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .psychology-card h3 {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 22px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 600; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--text);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-bottom: 10px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: color 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .psychology-card p {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--subtext);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 15px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; line-height: 1.6;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: color 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; #trusted-by {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: #0e0e0e;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; #trusted-by .grid { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; gap: 30px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .partner { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; justify-content: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; min-height: 80px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .partner img {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 100%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-height: 60px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; filter: grayscale(100%) opacity(0.7); &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: filter 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .partner img:hover {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; filter: grayscale(0%) opacity(1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: #080808; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--subtext);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 50px 40px 30px 40px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-container {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; justify-content: space-between;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; flex-wrap: wrap; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; gap: 20px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 1200px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin: 0 auto;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding-bottom: 30px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-bottom: 1px solid var(--border); </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-logo img {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 130px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; height: auto;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-links {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; flex-wrap: wrap; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; gap: 20px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-links a {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 14px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .footer-bottom {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-align: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-top: 30px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 14px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .primary-cta,</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .secondary-cta {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 14px 28px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 16px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-radius: 8px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; cursor: pointer;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: transform 0.3s ease, box-shadow 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border: 1px solid transparent; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .primary-cta {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--accent-gradient);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: #000;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border: none; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .primary-cta:hover {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transform: scale(1.05);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; box-shadow: 0 0 15px var(--accent-color-1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .secondary-cta {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: transparent;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border: 1px solid var(--card-border); </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--subtext);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .secondary-cta:hover {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--text);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-color: var(--accent-color-2);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transform: scale(1.05);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .popup {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: none; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: fixed;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; top: 0;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; left: 0;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; width: 100%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; height: 100%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background-color: rgba(0, 0, 0, 0.85); &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; z-index: 2000; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; justify-content: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 20px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .popup-content {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background-color: var(--popup-bg);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 30px 40px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-radius: 12px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; width: 100%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; max-width: 480px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; box-sizing: border-box;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: relative;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; box-shadow: 0 0 30px rgba(0, 255, 163, 0.1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .popup h2 {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 28px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--text);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-bottom: 24px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-align: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-family: &#39;Manrope&#39;, sans-serif; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 700;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .form-group {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-bottom: 18px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; width: 100%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .form-group label {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 14px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--subtext);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; display: block;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; margin-bottom: 6px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; text-align: left;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .form-group input {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; width: 100%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 12px 16px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 16px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-radius: 6px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border: 1px solid var(--card-border); </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background-color: var(--bg); &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--text);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; box-sizing: border-box; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: border-color 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .form-group input:focus {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; outline: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-color: var(--accent-color-1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .submit-btn {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; width: 100%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 14px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: var(--accent-gradient);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: #000;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border-radius: 8px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 16px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-weight: 600;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; cursor: pointer;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .submit-btn:hover {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transform: scale(1.03);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; box-shadow: 0 0 15px var(--accent-color-1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .submit-btn:disabled {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; background: var(--subtext);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; color: var(--bg);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; cursor: wait;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; transform: scale(1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; box-shadow: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .close-popup {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; position: absolute;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; top: 15px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; right: 15px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; font-size: 30px; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; line-height: 1;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--subtext);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; cursor: pointer;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; background: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; border: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; padding: 5px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transition: color 0.3s ease, transform 0.3s ease;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .close-popup:hover {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; color: var(--accent-color-1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; transform: rotate(90deg);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; #form-status {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; display: none;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; padding: 15px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; margin-top: 20px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; border-radius: 8px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; text-align: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; font-size: 15px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; line-height: 1.5;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; #form-status.success {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; background-color: var(--card-bg);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; border: 1px solid var(--accent-color-1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; color: var(--accent-color-1);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; #form-status.error {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; background-color: var(--card-bg);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; border: 1px solid var(--error-color);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; color: var(--error-color);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; @media (max-width: 992px) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .container {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; gap: 30px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; padding: 40px 20px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; width: 90%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .text-block h1, .hero .hero-title-line { </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; font-size: 44px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .text-block {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; flex-basis: 50%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .visual {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; flex-basis: 50%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp;.section h2 { font-size: 32px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; @media (max-width: 768px) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .navbar { padding: 15px 20px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .nav-links { display: none; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .nav-logo img { height: 40px; /* UPDATED: Mobile logo size */ }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; min-height: auto; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; padding-top: 20px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; padding-bottom: 40px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .container {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; flex-direction: column; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; text-align: center; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; padding: 30px 15px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; width: 90%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .visual {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; order: -1; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; margin-bottom: 30px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; width: 100%; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; max-width: 320px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; flex-basis: auto;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .visual img {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; max-height: 55vh; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .text-block {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; order: 2; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; max-width: 100%; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; text-align: center; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; flex-basis: auto;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .text-block h1, .hero .hero-title-line {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; font-size: 32px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .subhead {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; font-size: 16px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .cta-row {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; flex-direction: column;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; align-items: center; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; width: 100%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .hero .primary-cta, .hero .secondary-cta {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; width: 100%;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; max-width: 300px; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .section { padding: 60px 20px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .section h2 { font-size: 28px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .section p.subtext { font-size: 16px; margin-bottom: 30px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .grid { gap: 20px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .card { padding: 20px; min-height: auto; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .card h3 { font-size: 18px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .card p { font-size: 14px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .psychology-cards-container { gap: 20px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .psychology-card { padding: 24px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .psychology-card h3 { font-size: 20px; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; #trusted-by .grid {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; /* Ensure it adapts if there are only 3 partners */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; max-width: 800px; /* Adjust if needed to center 3 items better */</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; gap: 20px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp;.partner img { max-height: 40px; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .footer-container {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; flex-direction: column;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; gap: 30px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; padding-bottom: 20px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .footer-logo img { max-width: 120px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .footer-links { justify-content: center; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .footer-bottom { margin-top: 20px; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .popup-content {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; width: calc(100% - 40px); &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; padding: 25px;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .popup h2 { font-size: 24px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;/style&gt;</span></p><p class="c1"><span class="c0">&lt;/head&gt;</span></p><p class="c1"><span class="c0">&lt;body&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;header class=&quot;navbar&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;nav-logo&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;a href=&quot;#&quot;&gt; &lt;img src=&quot;https://i.ibb.co/HD9hhfBM/Gamixter-Logo-White.png&quot; alt=&quot;Gamixter Logo&quot; /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;nav class=&quot;nav-links&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;a href=&quot;#how-it-works&quot;&gt;How it works&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;a href=&quot;#core-mechanics&quot;&gt;Core Mechanics&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;a href=&quot;#trusted-by&quot;&gt;Partners&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;a href=&quot;#&quot; class=&quot;demo-cta-nav open-popup-trigger&quot;&gt;Contact Us&lt;/a&gt; &lt;/nav&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/header&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;section class=&quot;hero&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;container&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;text-block&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h1&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;hero-title-line&quot;&gt;Launch Pre-Built Gamification&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;hero-title-line&quot;&gt;And Go Live in Just 1 Day.&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/h1&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p class=&quot;subhead&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Instantly boost player retention and revenue on your iGaming platform with our ready-to-launch gamification tools.</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul class=&quot;benefits&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&#9989; Achieve &lt;strong&gt;+20% player session length&lt;/strong&gt;&lt;/li&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&#128176; Reduce &lt;strong&gt;bonus spending by up to 30%&lt;/strong&gt;&lt;/li&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&#9889; &lt;strong&gt;Launch Ready:&lt;/strong&gt; Pre-built for &amp;lt;24h deployment, no CRM changes needed.&lt;/li&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;cta-row&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;button class=&quot;primary-cta open-popup-trigger&quot;&gt;&#128640; Book a Demo&lt;/button&gt; &lt;button class=&quot;secondary-cta&quot;&gt;&#9654; Watch Demo&lt;/button&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p class=&quot;microcopy&quot;&gt;Activate pre-built engagement tools. See results tomorrow.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;visual&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;img src=&quot;https://i.ibb.co/yndy3Xtf/SIte-Mockup.png&quot; alt=&quot;Gamixter Gamification UI on Phone - New Mockup&quot; /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/section&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;section class=&quot;section&quot; id=&quot;how-it-works&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;h2&gt;Go Live in 3 Simple Steps&lt;/h2&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;p class=&quot;subtext&quot;&gt;Our streamlined process gets you up and running, engaging players in under 24 hours.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;grid&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;icon&quot;&gt;&#129513;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3&gt;1. Quick Setup&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Integrate Gamixter effortlessly with a lightweight snippet. Ready for a 1-day launch.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;icon&quot;&gt;&#9881;&#65039;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3&gt;2. Activate Mechanics&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Choose from our extensive library of ready-to-use gamification tools. Zero coding required.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;icon&quot;&gt;&#128640;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3&gt;3. Launch &amp; Grow&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Deploy your strategy immediately and watch player engagement and retention metrics improve from day one.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/section&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;section class=&quot;section&quot; id=&quot;core-mechanics&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;h2&gt;Explore Our Engagement Mechanics&lt;/h2&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;p class=&quot;subtext&quot;&gt;Discover a versatile suite of gamification tools designed to captivate players and enhance their experience. Activate them in minutes.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;grid&quot;&gt; &lt;div class=&quot;card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;icon&quot;&gt;&#127920;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3&gt;Jackpot Aggregator&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Cross-provider jackpots with segmentation and recharge logic. Ready to deploy.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;icon&quot;&gt;&#128230;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3&gt;Lootboxes&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Reward-based boxes with custom probabilities for each player segment. Pre-built for fast launch.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;icon&quot;&gt;&#127873;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3&gt;Claim Mechanics&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Trigger-based or scheduled reward drops to increase activity. Activate in minutes.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;icon&quot;&gt;&#127905;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3&gt;Fortune Wheels&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Spin-to-win wheels for deposits, actions or achievements. Launch today.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;card special&quot;&gt; &lt;div class=&quot;icon&quot;&gt;&#10024;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3&gt;Versatile &amp; Ever-Growing Toolkit&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Seasonal events, bonus enhancements, and new mechanics are regularly added. All designed for quick, no-code activation.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/section&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&lt;section class=&quot;section psychology-section&quot; id=&quot;psychology&quot;&gt; &lt;h2&gt;Designed for Player Engagement&lt;/h2&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;p class=&quot;subtext&quot;&gt;Gamixter mechanics are rooted in proven player psychology. We draw inspiration from top-tier gaming experiences to ensure deep and meaningful engagement, not just bonus spam.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;div class=&quot;psychology-cards-container&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;psychology-card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;icon&quot;&gt;&#127918;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;h3&gt;Variable Rewards&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;p&gt;Leverage powerful dopamine mechanics that drive continued engagement through unpredictable and exciting rewards.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;psychology-card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;icon&quot;&gt;&#9203;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;h3&gt;Loss Aversion&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;p&gt;Create compelling reasons for players to return. Limited-time offers and &#39;don&#39;t miss out&#39; events boost retention.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;psychology-card&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;icon&quot;&gt;&#127919;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;h3&gt;Progression&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;p&gt;Implement clear goals and mission structures that give players a sense of achievement and keep them striving for more.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&lt;/section&gt;</span></p><p class="c1"><span class="c0">&nbsp; </span></p><p class="c1"><span class="c0">&lt;section class=&quot;section&quot; id=&quot;trusted-by&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;h2&gt;Partners&lt;/h2&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;p class=&quot;subtext&quot;&gt;Trusted by known market leaders and innovative platforms.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;div class=&quot;grid&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;partner&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;img src=&quot;https://i.ibb.co/NgkW87LC/22-Bet-logo1.png&quot; alt=&quot;22Bet Logo&quot; /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;partner&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;img src=&quot;https://i.ibb.co/zW3YLtfZ/Slotegrator-H-white2000.png&quot; alt=&quot;Slotegrator Logo&quot; /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;partner&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;img src=&quot;https://i.ibb.co/WW1sd5mW/bitz.png&quot; alt=&quot;Bitz Logo&quot; /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&lt;/section&gt;</span></p><p class="c1"><span class="c0">&nbsp; </span></p><p class="c1"><span class="c0">&lt;footer class=&quot;footer&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;div class=&quot;footer-container&quot;&gt; &lt;div class=&quot;footer-logo&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;img src=&quot;https://i.ibb.co/HD9hhfBM/Gamixter-Logo-White.png&quot; alt=&quot;Gamixter Logo&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;footer-links&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;a href=&quot;#how-it-works&quot;&gt;How it Works&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;a href=&quot;#core-mechanics&quot;&gt;Core Mechanics&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;a href=&quot;#&quot;&gt;Terms &amp; Conditions&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;Privacy Policy&lt;/a&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;div class=&quot;footer-bottom&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;p&gt;&amp;copy; &lt;span id=&quot;current-year&quot;&gt;&lt;/span&gt; Gamixter. All rights reserved.&lt;/p&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&lt;/footer&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&lt;div id=&quot;popup-form&quot; class=&quot;popup&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;div class=&quot;popup-content&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;button id=&quot;close-popup&quot; class=&quot;close-popup&quot;&gt;&amp;times;&lt;/button&gt; &lt;h2&gt;Book a Demo&lt;/h2&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;form id=&quot;demo-form&quot; action=&quot;https://formsubmit.co/hello@gamixter.com&quot; method=&quot;POST&quot;&gt; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;input type=&quot;hidden&quot; name=&quot;_subject&quot; value=&quot;New Demo Request from Gamixter Website!&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;form-group&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;label for=&quot;company-name&quot;&gt;Company Name&lt;/label&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;input type=&quot;text&quot; id=&quot;company-name&quot; name=&quot;company-name&quot; required /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;form-group&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;label for=&quot;your-name&quot;&gt;Your Name&lt;/label&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;input type=&quot;text&quot; id=&quot;your-name&quot; name=&quot;your-name&quot; required /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;form-group&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;form-group&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;label for=&quot;site&quot;&gt;Your Website&lt;/label&gt; &lt;input type=&quot;url&quot; id=&quot;site&quot; name=&quot;site&quot; placeholder=&quot;https://example.com&quot; required /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;button type=&quot;submit&quot; class=&quot;submit-btn&quot;&gt;Submit Request&lt;/button&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/form&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div id=&quot;form-status&quot;&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/div&gt;</span></p><p class="c1"><span class="c0">&lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&lt;script&gt;</span></p><p class="c1"><span class="c0">&nbsp; // Popup Logic</span></p><p class="c1"><span class="c0">&nbsp; const popup = document.getElementById(&quot;popup-form&quot;);</span></p><p class="c1"><span class="c0">&nbsp; const openPopupButtons = document.querySelectorAll(&quot;.open-popup-trigger&quot;);</span></p><p class="c1"><span class="c0">&nbsp; const closePopupButton = document.getElementById(&quot;close-popup&quot;);</span></p><p class="c1"><span class="c0">&nbsp; const formStatusDiv = document.getElementById(&#39;form-status&#39;); &nbsp;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; openPopupButtons.forEach(button =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; button.addEventListener(&quot;click&quot;, (event) =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; event.preventDefault(); &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; popup.style.display = &quot;flex&quot;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; formStatusDiv.style.display = &#39;none&#39;; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; formStatusDiv.className = &#39;&#39;; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; const demoFormElement = document.getElementById(&#39;demo-form&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; if (demoFormElement) demoFormElement.style.display = &#39;block&#39;; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; });</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; if (closePopupButton) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; closePopupButton.addEventListener(&quot;click&quot;, () =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; popup.style.display = &quot;none&quot;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; if (popup) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; popup.addEventListener(&quot;click&quot;, (event) =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; if (event.target === popup) { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; popup.style.display = &quot;none&quot;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; </span></p><p class="c1"><span class="c0">&nbsp; document.addEventListener(&#39;keydown&#39;, (event) =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; if (event.key === &#39;Escape&#39; &amp;&amp; popup.style.display === &#39;flex&#39;) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; popup.style.display = &#39;none&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; });</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; document.querySelectorAll(&#39;a[href^=&quot;#&quot;]&#39;).forEach(anchor =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; anchor.addEventListener(&#39;click&#39;, function (e) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; const href = this.getAttribute(&#39;href&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; if (href.length &gt; 1 &amp;&amp; document.querySelector(href)) { </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; e.preventDefault();</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.querySelector(href).scrollIntoView({</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; behavior: &#39;smooth&#39;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; } else if (href === &#39;#&#39;) { </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; e.preventDefault();</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; </span></p><p class="c1"><span class="c0">&nbsp; const currentYearSpan = document.getElementById(&#39;current-year&#39;);</span></p><p class="c1"><span class="c0">&nbsp; if (currentYearSpan) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; currentYearSpan.textContent = new Date().getFullYear();</span></p><p class="c1"><span class="c0">&nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; const cardsToAnimate = document.querySelectorAll(&#39;.card, .psychology-card&#39;);</span></p><p class="c1"><span class="c0">&nbsp; const observerOptions = {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; root: null, &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; rootMargin: &#39;0px&#39;,</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; threshold: 0.1 &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; };</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; const observerCallback = (entries, observer) =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; entries.forEach(entry =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; if (entry.isIntersecting) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; entry.target.style.opacity = &#39;1&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; entry.target.style.transform = &#39;translateY(0)&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // Initial entrance animation transition is set via JS for a slight delay</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // entry.target.style.transition = &#39;opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s&#39;; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; observer.unobserve(entry.target); &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; };</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; cardsToAnimate.forEach((card, index) =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; card.style.opacity = &#39;0&#39;; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; card.style.transform = &#39;translateY(30px)&#39;; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; // Add transition style directly for the entrance animation</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; card.style.transition = &#39;opacity 0.6s ease-out &#39; + (index * 0.1) + &#39;s, transform 0.6s ease-out &#39; + (index * 0.1) + &#39;s&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; scrollObserver.observe(card);</span></p><p class="c1"><span class="c0">&nbsp; });</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; const demoForm = document.getElementById(&#39;demo-form&#39;);</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; if (demoForm) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; demoForm.addEventListener(&#39;submit&#39;, function(event) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; event.preventDefault(); &nbsp;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; const formData = new FormData(demoForm);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; const submitButton = demoForm.querySelector(&#39;.submit-btn&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; const originalButtonText = submitButton.textContent;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; formStatusDiv.style.display = &#39;none&#39;; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; formStatusDiv.className = &#39;&#39;; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; submitButton.disabled = true;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; submitButton.textContent = &#39;Sending...&#39;;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; fetch(demoForm.action, {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; method: &#39;POST&#39;,</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; body: formData,</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; headers: {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#39;Accept&#39;: &#39;application/json&#39; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; })</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .then(response =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; if (response.ok) { </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;try {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return response.json(); </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } catch (e) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return { success: true, message: &quot;Form submitted successfully (possibly via redirect).&quot; };</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; } else {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return response.json().then(data =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throw new Error(data.message || &#39;Submission failed. Please try again.&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }).catch(jsonParseError =&gt; { </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throw new Error(&#39;Server error &#39; + response.status + &#39;. Please try again.&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; })</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .then(data =&gt; { &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; if (data.success || data.ok || (typeof data.success === &#39;string&#39; &amp;&amp; data.success.toLowerCase() === &#39;true&#39;)) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; formStatusDiv.textContent = &#39;Thank you! Your demo request has been sent.&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; formStatusDiv.className = &#39;success&#39;; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; formStatusDiv.style.display = &#39;block&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; demoForm.reset(); &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; } else {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throw new Error(data.message || &#39;Failed to submit the form. Please try again.&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; })</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .catch(error =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; formStatusDiv.textContent = &#39;Error: &#39; + error.message;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; formStatusDiv.className = &#39;error&#39;; &nbsp;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; formStatusDiv.style.display = &#39;block&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; })</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; .finally(() =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; submitButton.disabled = false;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; submitButton.textContent = originalButtonText;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&lt;/script&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&lt;/body&gt;</span></p><p class="c1"><span class="c0">&lt;/html&gt;</span></p><p class="c1 c2"><span class="c0"></span></p></body></html>
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gamixter – Pre-Built Gamification | Live in 1 Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --text: #ffffff;
+      --subtext: #b0b0b0;
+      --accent-gradient: linear-gradient(135deg, #00ffa3, #00d9ff);
+      --accent-color-1: #00ffa3;
+      --accent-color-2: #00d9ff;
+      --border: #1a1a1a;
+      --card-bg: #151515;
+      --card-border: #1f1f1f; 
+      --popup-bg: #2e2e2e;
+      --error-color: #ff4d4d;  
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--subtext);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--text);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-logo img {
+      height: 56px; 
+      width: auto;
+      display: block;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      margin-left: 24px;
+      font-size: 15px;
+    }
+
+    .demo-cta-nav {
+      padding: 10px 20px;
+      background: var(--accent-gradient);
+      border-radius: 6px;
+      color: #000;
+      font-weight: 600;
+      margin-left: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .demo-cta-nav:hover {
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--accent-color-1);
+    }
+
+    .hero {
+      padding: 0; 
+      min-height: 100vh; 
+      display: flex;
+      align-items: center; 
+      background: var(--bg); 
+      overflow: hidden; 
+      position: relative; 
+    }
+
+    .hero .container {
+      display: flex;
+      flex-direction: row; 
+      align-items: center; 
+      justify-content: space-between; 
+      max-width: 1200px;  
+      width: 95%; 
+      margin: 0 auto;
+      padding: 60px 20px; 
+      gap: 40px;
+      position: relative; 
+      z-index: 2; 
+    }
+
+    .hero .text-block {
+      flex: 1 1 45%; 
+      max-width: 580px; 
+      z-index: 2; 
+      position: relative; 
+    }
+
+    .hero .text-block h1 {  
+      font-size: 52px; 
+      font-weight: 700;
+      margin-bottom: 24px; 
+      line-height: 1.15;
+    }
+    .hero .hero-title-line {
+        display: block;
+    }
+
+    .hero .subhead {
+      font-size: 18px;
+      color: var(--subtext);
+      line-height: 1.6;
+      margin-bottom: 28px; 
+    }
+
+    .hero .benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px 0; 
+      font-size: 16px;
+    }
+    .hero .benefits li { margin-bottom: 12px; color: var(--subtext); }
+    .hero .benefits li strong { color: var(--text); }
+
+    .hero .cta-row { 
+        display: flex;
+        gap: 16px; 
+        margin-bottom: 16px; 
+        align-items: center; 
+    }
+    .hero .microcopy { font-size: 14px; color: var(--subtext); margin-bottom: 0; }
+
+    .hero .visual {
+      flex: 1 1 55%; 
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+      height: auto; 
+      position: relative;
+    }
+
+    .hero .visual img {
+      max-width: 100%; 
+      height: auto; 
+      max-height: 85vh; 
+      border-radius: 16px; 
+      object-fit: contain; 
+    }
+    
+    .section {
+      padding: 80px 40px;  
+      text-align: center;  
+    }
+
+    .section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text);  
+    }
+
+    .section p.subtext {  
+      font-size: 18px;
+      color: var(--subtext);
+      max-width: 640px;
+      margin: 0 auto 40px auto;  
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;  
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;  
+    }
+    
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px 24px;  
+      display: flex;
+      flex-direction: column;
+      align-items: center;  
+      text-align: center;  
+      transition: transform 0.4s ease, box-shadow 0.4s ease; /* UPDATED transition */
+      min-height: 220px;  
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.03); /* UPDATED transform */
+      box-shadow: 0 0 25px rgba(0, 255, 163, 0.5), /* Outer glow --accent-color-1 */
+                  0 0 35px rgba(0, 255, 163, 0.3), /* Softer, wider glow --accent-color-1 */
+                  0 0 15px rgba(0, 217, 255, 0.2); /* Subtle touch of --accent-color-2 */
+    }
+
+    .card .icon {  
+      font-size: 30px;  
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(0, 255, 163, 0.1);
+      color: var(--accent-color-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;  
+      flex-shrink: 0;
+      transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* UPDATED: Added transition for icon */
+    }
+
+    .card:hover .icon {
+      transform: scale(1.15) rotate(5deg); /* UPDATED: Icon animation on hover */
+    }
+
+    .card h3 {
+      font-size: 20px;  
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 15px;
+      color: var(--subtext);
+      line-height: 1.5;
+    }
+
+    .card.special {  
+      background: var(--accent-gradient);
+      color: #000;
+      border-color: transparent; 
+    }
+    .card.special:hover {
+        transform: translateY(-8px) scale(1.03); /* Keep consistent transform */
+        box-shadow: 0 0 25px rgba(0,0,0,0.3); /* Different shadow for special card */
+        border-color: transparent; /* Ensure no colored border from default card hover if styles cascade */
+    }
+
+    .card.special h3,
+    .card.special p {
+      color: #000;
+    }
+
+    .card.special .icon {
+      background: rgba(0, 0, 0, 0.1);
+      color: #000;
+    }
+    .card.special:hover .icon {
+        transform: scale(1.15) rotate(5deg); /* Consistent icon animation */
+    }
+    
+    .psychology-section {  
+      background: #0e0e0e;  
+    }
+    
+    .psychology-cards-container {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .psychology-card {
+      background: #222;  
+      padding: 32px;  
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      overflow: hidden;  
+    }
+
+    .psychology-card:hover {
+      transform: translateY(-5px) scale(1.02);  
+      box-shadow: 0 0 25px rgba(0, 255, 163, 0.25);
+      background-color: var(--accent-color-1);
+    }
+    
+    .psychology-card:hover .icon {
+      transform: rotate(15deg) scale(1.1);
+      background: rgba(0,0,0,0.15);
+      color: #000;
+    }
+    
+    .psychology-card:hover h3,
+    .psychology-card:hover p {
+      color: #000;
+    }
+
+    .psychology-card .icon {  
+      font-size: 32px;  
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 20px auto;
+      background: rgba(0, 255, 163, 0.1);
+      color: var(--accent-color-1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .psychology-card h3 {
+      font-size: 22px;  
+      font-weight: 600;  
+      color: var(--text);
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .psychology-card p {
+      color: var(--subtext);
+      font-size: 15px;
+      line-height: 1.6;
+      transition: color 0.3s ease;
+    }
+
+    #trusted-by {
+      background: #0e0e0e;
+    }
+    
+    #trusted-by .grid {  
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+      gap: 30px;  
+      align-items: center;  
+    }
+
+    .partner {  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80px;  
+    }
+    .partner img {
+      max-width: 100%;
+      max-height: 60px;  
+      filter: grayscale(100%) opacity(0.7);  
+      transition: filter 0.3s ease;
+    }
+    .partner img:hover {
+      filter: grayscale(0%) opacity(1);
+    }
+    
+    .footer {
+      background: #080808;  
+      color: var(--subtext);
+      padding: 50px 40px 30px 40px;  
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;  
+      gap: 20px;  
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 30px;  
+      border-bottom: 1px solid var(--border); 
+    }
+
+    .footer-logo img {
+      max-width: 130px;  
+      height: auto;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;  
+      gap: 20px;  
+    }
+
+    .footer-links a {
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    .primary-cta,
+    .secondary-cta {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid transparent;  
+    }
+
+    .primary-cta {
+      background: var(--accent-gradient);
+      color: #000;
+      border: none;  
+    }
+    .primary-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px var(--accent-color-1);
+    }
+
+    .secondary-cta {
+      background: transparent;
+      border: 1px solid var(--card-border); 
+      color: var(--subtext);
+    }
+    .secondary-cta:hover {
+      color: var(--text);
+      border-color: var(--accent-color-2);
+      transform: scale(1.05);
+    }
+
+    .popup {
+      display: none;  
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);  
+      z-index: 2000;  
+      justify-content: center;
+      align-items: center;
+      padding: 20px;  
+    }
+
+    .popup-content {
+      background-color: var(--popup-bg);
+      padding: 30px 40px;  
+      border-radius: 12px;
+      width: 100%;
+      max-width: 480px;  
+      box-sizing: border-box;
+      position: relative;
+      box-shadow: 0 0 30px rgba(0, 255, 163, 0.1);
+    }
+
+    .popup h2 {
+      font-size: 28px;  
+      color: var(--text);
+      margin-bottom: 24px;
+      text-align: center;
+      font-family: 'Manrope', sans-serif;  
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+      width: 100%;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      color: var(--subtext);
+      display: block;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid var(--card-border); 
+      background-color: var(--bg);  
+      color: var(--text);
+      box-sizing: border-box;  
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--accent-color-1);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--accent-gradient);
+      color: #000;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px var(--accent-color-1);
+    }
+    
+    .submit-btn:disabled {
+        background: var(--subtext);
+        color: var(--bg);
+        cursor: wait;
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    .close-popup {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 30px;  
+      line-height: 1;
+      color: var(--subtext);
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .close-popup:hover {
+      color: var(--accent-color-1);
+      transform: rotate(90deg);
+    }
+
+    #form-status {
+        display: none;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    #form-status.success {
+        background-color: var(--card-bg);
+        border: 1px solid var(--accent-color-1);
+        color: var(--accent-color-1);
+    }
+
+    #form-status.error {
+        background-color: var(--card-bg);
+        border: 1px solid var(--error-color);
+        color: var(--error-color);
+    }
+
+    @media (max-width: 992px) {
+      .hero .container {
+        gap: 30px;
+        padding: 40px 20px;
+        width: 90%;
+      }
+      .hero .text-block h1, .hero .hero-title-line { 
+        font-size: 44px; 
+      }
+      .hero .text-block {
+        flex-basis: 50%;
+      }
+      .hero .visual {
+        flex-basis: 50%;
+      }
+       .section h2 { font-size: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      .navbar { padding: 15px 20px; }
+      .nav-links { display: none; }
+      .nav-logo img { height: 40px; /* UPDATED: Mobile logo size */ }
+
+      .hero {
+        min-height: auto; 
+        padding-top: 20px; 
+        padding-bottom: 40px;
+      }
+      .hero .container {
+        flex-direction: column; 
+        text-align: center; 
+        padding: 30px 15px;
+        width: 90%;
+      }
+      .hero .visual {
+        order: -1; 
+        margin-bottom: 30px;
+        width: 100%; 
+        max-width: 320px; 
+        flex-basis: auto;
+      }
+      .hero .visual img {
+        max-height: 55vh; 
+      }
+      .hero .text-block {
+        order: 2; 
+        max-width: 100%; 
+        text-align: center; 
+        flex-basis: auto;
+      }
+      .hero .text-block h1, .hero .hero-title-line {
+        font-size: 32px; 
+      }
+      .hero .subhead {
+        font-size: 16px;
+      }
+      .hero .cta-row {
+        flex-direction: column;
+        align-items: center; 
+        width: 100%;
+      }
+      .hero .primary-cta, .hero .secondary-cta {
+        width: 100%;
+        max-width: 300px; 
+      }
+
+      .section { padding: 60px 20px; }
+      .section h2 { font-size: 28px; }
+      .section p.subtext { font-size: 16px; margin-bottom: 30px; }
+      .grid { gap: 20px; }
+      .card { padding: 20px; min-height: auto; }
+      .card h3 { font-size: 18px; }
+      .card p { font-size: 14px; }
+      
+      .psychology-cards-container { gap: 20px; }
+      .psychology-card { padding: 24px; }
+      .psychology-card h3 { font-size: 20px; }
+
+      #trusted-by .grid {
+        /* Ensure it adapts if there are only 3 partners */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+        max-width: 800px; /* Adjust if needed to center 3 items better */
+        gap: 20px;
+      }
+       .partner img { max-height: 40px; }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding-bottom: 20px;
+      }
+      .footer-logo img { max-width: 120px; }
+      .footer-links { justify-content: center; }
+      .footer-bottom { margin-top: 20px; }
+
+      .popup-content {
+        width: calc(100% - 40px);  
+        padding: 25px;
+      }
+      .popup h2 { font-size: 24px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-logo">
+      <a href="#"> <img src="https://i.ibb.co/HD9hhfBM/Gamixter-Logo-White.png" alt="Gamixter Logo" />
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#core-mechanics">Core Mechanics</a>
+      <a href="#trusted-by">Partners</a>
+      <a href="#" class="demo-cta-nav open-popup-trigger">Contact Us</a> </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="text-block">
+        <h1>
+          <div class="hero-title-line">Launch Pre-Built Gamification</div>
+          <div class="hero-title-line">And Go Live in Just 1 Day.</div>
+        </h1>
+        <p class="subhead">
+          Instantly boost player retention and revenue on your iGaming platform with our ready-to-launch gamification tools.
+        </p>
+        <ul class="benefits">
+          <li>✅ Achieve <strong>+20% player session length</strong></li>
+          <li>💰 Reduce <strong>bonus spending by up to 30%</strong></li>
+          <li>⚡ <strong>Launch Ready:</strong> Pre-built for &lt;24h deployment, no CRM changes needed.</li>
+        </ul>
+        <div class="cta-row">
+          <button class="primary-cta open-popup-trigger">🚀 Book a Demo</button> <button class="secondary-cta">▶ Watch Demo</button>
+        </div>
+        <p class="microcopy">Activate pre-built engagement tools. See results tomorrow.</p>
+      </div>
+      <div class="visual">
+        <img src="https://i.ibb.co/yndy3Xtf/SIte-Mockup.png" alt="Gamixter Gamification UI on Phone - New Mockup" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <h2>Go Live in 3 Simple Steps</h2>
+    <p class="subtext">Our streamlined process gets you up and running, engaging players in under 24 hours.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🧩</div>
+        <h3>1. Quick Setup</h3>
+        <p>Integrate Gamixter effortlessly with a lightweight snippet. Ready for a 1-day launch.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3>2. Activate Mechanics</h3>
+        <p>Choose from our extensive library of ready-to-use gamification tools. Zero coding required.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🚀</div>
+        <h3>3. Launch & Grow</h3>
+        <p>Deploy your strategy immediately and watch player engagement and retention metrics improve from day one.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="core-mechanics">
+    <h2>Explore Our Engagement Mechanics</h2>
+    <p class="subtext">Discover a versatile suite of gamification tools designed to captivate players and enhance their experience. Activate them in minutes.</p>
+    <div class="grid"> <div class="card">
+        <div class="icon">🎰</div>
+        <h3>Jackpot Aggregator</h3>
+        <p>Cross-provider jackpots with segmentation and recharge logic. Ready to deploy.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📦</div>
+        <h3>Lootboxes</h3>
+        <p>Reward-based boxes with custom probabilities for each player segment. Pre-built for fast launch.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎁</div>
+        <h3>Claim Mechanics</h3>
+        <p>Trigger-based or scheduled reward drops to increase activity. Activate in minutes.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎡</div>
+        <h3>Fortune Wheels</h3>
+        <p>Spin-to-win wheels for deposits, actions or achievements. Launch today.</p>
+      </div>
+      <div class="card special"> <div class="icon">✨</div>
+        <h3>Versatile & Ever-Growing Toolkit</h3>
+        <p>Seasonal events, bonus enhancements, and new mechanics are regularly added. All designed for quick, no-code activation.</p>
+      </div>
+    </div>
+  </section>
+
+<section class="section psychology-section" id="psychology"> <h2>Designed for Player Engagement</h2>
+  <p class="subtext">Gamixter mechanics are rooted in proven player psychology. We draw inspiration from top-tier gaming experiences to ensure deep and meaningful engagement, not just bonus spam.</p>
+  <div class="psychology-cards-container">
+    <div class="psychology-card">
+      <div class="icon">🎮</div>
+      <h3>Variable Rewards</h3>
+      <p>Leverage powerful dopamine mechanics that drive continued engagement through unpredictable and exciting rewards.</p>
+    </div>
+    <div class="psychology-card">
+      <div class="icon">⏳</div>
+      <h3>Loss Aversion</h3>
+      <p>Create compelling reasons for players to return. Limited-time offers and 'don't miss out' events boost retention.</p>
+    </div>
+    <div class="psychology-card">
+      <div class="icon">🎯</div>
+      <h3>Progression</h3>
+      <p>Implement clear goals and mission structures that give players a sense of achievement and keep them striving for more.</p>
+    </div>
+  </div>
+</section>
+  
+<section class="section" id="trusted-by">
+  <h2>Partners</h2>
+  <p class="subtext">Trusted by known market leaders and innovative platforms.</p>
+  <div class="grid">
+    <div class="partner">
+      <img src="https://i.ibb.co/NgkW87LC/22-Bet-logo1.png" alt="22Bet Logo" />
+    </div>
+    <div class="partner">
+      <img src="https://i.ibb.co/zW3YLtfZ/Slotegrator-H-white2000.png" alt="Slotegrator Logo" />
+    </div>
+    <div class="partner">
+      <img src="https://i.ibb.co/WW1sd5mW/bitz.png" alt="Bitz Logo" />
+    </div>
+  </div>
+</section>
+  
+<footer class="footer">
+  <div class="footer-container"> <div class="footer-logo">
+      <img src="https://i.ibb.co/HD9hhfBM/Gamixter-Logo-White.png" alt="Gamixter Logo">
+    </div>
+    <div class="footer-links">
+      <a href="#how-it-works">How it Works</a>
+      <a href="#core-mechanics">Core Mechanics</a>
+      <a href="#">Terms & Conditions</a> <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="current-year"></span> Gamixter. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="popup-form" class="popup">
+  <div class="popup-content">
+    <button id="close-popup" class="close-popup">&times;</button> <h2>Book a Demo</h2>
+    <form id="demo-form" action="https://formsubmit.co/hello@gamixter.com" method="POST"> 
+      <input type="hidden" name="_subject" value="New Demo Request from Gamixter Website!">
+      <div class="form-group">
+        <label for="company-name">Company Name</label>
+        <input type="text" id="company-name" name="company-name" required />
+      </div>
+      <div class="form-group">
+        <label for="your-name">Your Name</label>
+        <input type="text" id="your-name" name="your-name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="site">Your Website</label> <input type="url" id="site" name="site" placeholder="https://example.com" required />
+      </div>
+      <button type="submit" class="submit-btn">Submit Request</button>
+    </form>
+    <div id="form-status"></div>
+  </div>
+</div>
+
+<script>
+  // Popup Logic
+  const popup = document.getElementById("popup-form");
+  const openPopupButtons = document.querySelectorAll(".open-popup-trigger");
+  const closePopupButton = document.getElementById("close-popup");
+  const formStatusDiv = document.getElementById('form-status');  
+
+  openPopupButtons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();  
+      popup.style.display = "flex";
+      formStatusDiv.style.display = 'none';  
+      formStatusDiv.className = '';  
+      const demoFormElement = document.getElementById('demo-form');
+      if (demoFormElement) demoFormElement.style.display = 'block'; 
+    });
+  });
+
+  if (closePopupButton) {
+    closePopupButton.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+  }
+
+  if (popup) {
+    popup.addEventListener("click", (event) => {
+      if (event.target === popup) {  
+        popup.style.display = "none";
+      }
+    });
+  }
+  
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && popup.style.display === 'flex') {
+      popup.style.display = 'none';
+    }
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href.length > 1 && document.querySelector(href)) { 
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({
+          behavior: 'smooth'
+        });
+      } else if (href === '#') { 
+        e.preventDefault();
+      }
+    });
+  });
+  
+  const currentYearSpan = document.getElementById('current-year');
+  if (currentYearSpan) {
+    currentYearSpan.textContent = new Date().getFullYear();
+  }
+
+  const cardsToAnimate = document.querySelectorAll('.card, .psychology-card');
+  const observerOptions = {
+    root: null,  
+    rootMargin: '0px',
+    threshold: 0.1  
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        // Initial entrance animation transition is set via JS for a slight delay
+        // entry.target.style.transition = 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'; 
+        observer.unobserve(entry.target);  
+      }
+    });
+  };
+
+  const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
+
+  cardsToAnimate.forEach((card, index) => {
+    card.style.opacity = '0';  
+    card.style.transform = 'translateY(30px)';  
+    // Add transition style directly for the entrance animation
+    card.style.transition = 'opacity 0.6s ease-out ' + (index * 0.1) + 's, transform 0.6s ease-out ' + (index * 0.1) + 's';
+    scrollObserver.observe(card);
+  });
+
+  const demoForm = document.getElementById('demo-form');
+
+  if (demoForm) {
+    demoForm.addEventListener('submit', function(event) {
+      event.preventDefault();  
+
+      const formData = new FormData(demoForm);
+      const submitButton = demoForm.querySelector('.submit-btn');
+      const originalButtonText = submitButton.textContent;
+
+      formStatusDiv.style.display = 'none'; 
+      formStatusDiv.className = '';  
+      
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+
+      fetch(demoForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'  
+        }
+      })
+      .then(response => {
+        if (response.ok) { 
+           try {
+                return response.json(); 
+            } catch (e) {
+                return { success: true, message: "Form submitted successfully (possibly via redirect)." };
+            }
+        } else {
+          return response.json().then(data => {
+            throw new Error(data.message || 'Submission failed. Please try again.');
+          }).catch(jsonParseError => { 
+            throw new Error('Server error ' + response.status + '. Please try again.');
+          });
+        }
+      })
+      .then(data => {  
+        if (data.success || data.ok || (typeof data.success === 'string' && data.success.toLowerCase() === 'true')) {
+            formStatusDiv.textContent = 'Thank you! Your demo request has been sent.';
+            formStatusDiv.className = 'success';  
+            formStatusDiv.style.display = 'block';
+            demoForm.reset();  
+        } else {
+            throw new Error(data.message || 'Failed to submit the form. Please try again.');
+        }
+      })
+      .catch(error => {
+        formStatusDiv.textContent = 'Error: ' + error.message;
+        formStatusDiv.className = 'error';  
+        formStatusDiv.style.display = 'block';
+      })
+      .finally(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      });
+    });
+  }
+
+</script>
+
+</body>
+</html>
