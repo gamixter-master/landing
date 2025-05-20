@@ -6,10 +6,8 @@
   <title>Gamixter – Pre-Built Gamification | Live in 1 Day</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
   
-  <link rel="icon" href="https://i.ibb.co/zH0YCSJK/favicon-new.png" type="image/x-icon">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/zH0YCSJK/favicon-new.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/zH0YCSJK/favicon-new.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/zH0YCSJK/favicon-new.png">
+  <link rel="icon" href="https://i.ibb.co/bR8ZYrJp/favicon-new.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://i.ibb.co/bR8ZYrJp/favicon-new.png">
 
   <style>
     :root {
@@ -47,37 +45,36 @@
     .navbar {
       display: flex;
       justify-content: space-between;
-      align-items: center; /* Key for vertical alignment */
+      align-items: center; 
       padding: 20px 40px; 
       background: var(--bg);
       position: sticky;
       top: 0;
       z-index: 1000;
-      /* height: 96px; REMOVED fixed height */
       box-sizing: border-box;
     }
 
     .nav-logo img {
       height: 56px; 
       width: auto;
-      display: block; /* Helps with alignment */
-      vertical-align: middle; /* Can sometimes help with image alignment issues */
+      display: block; 
+      vertical-align: middle; 
     }
     
     .nav-links {
       display: flex;
-      align-items: center; /* Vertically aligns items within .nav-links */
+      align-items: center; 
     }
 
-    .nav-links a { /* This refers to text links, not the button styled separately */
+    .nav-links a:not(.demo-cta-nav) { 
       margin-left: 24px;
       font-size: 15px;
-      padding: 10px 0; /* ADDED vertical padding */
-      display: inline-block; /* Makes padding effective */
-      line-height: 1.2; /* Adjusted for better vertical centering with padding */
+      padding: 10px 0; 
+      display: inline-block; 
+      line-height: 1.2; 
     }
 
-    .demo-cta-nav { /* This is the "Contact Us" button */
+    .demo-cta-nav { 
       padding: 10px 20px;
       background: var(--accent-color-1); 
       border-radius: 6px;
@@ -85,10 +82,10 @@
       font-weight: 600;
       margin-left: 24px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      line-height: normal; /* Ensure default line height for button text */
-      display: inline-flex; /* Helps center text within button padding */
-      align-items: center;  /* Helps center text within button padding */
-      justify-content: center; /* Helps center text within button padding */
+      line-height: normal; 
+      display: inline-flex; 
+      align-items: center;  
+      justify-content: center; 
     }
     .demo-cta-nav:hover {
       color: #000;
@@ -98,7 +95,7 @@
 
     .hero {
       padding: 0; 
-      min-height: calc(100vh - 96px); /* Assuming navbar effective height is around 96px */
+      min-height: calc(100vh - 96px); 
       display: flex;
       align-items: center; 
       background: var(--bg); 
@@ -352,36 +349,145 @@
       line-height: 1.6;
       transition: color 0.3s ease;
     }
+/* ========= STYLES FOR RESULTS SECTION CARDS (INVERTED THEME) ========= */
 
-    #trusted-by {
-      background: #0e0e0e;
-    }
-    
+#results .card {
+    background-color: var(--accent-color-1); /* Salad green background */
+    border: 1px solid var(--accent-color-1); /* Green border, or a slightly darker shade of green if preferred */
+    color: #000000; /* Default text color for content on green background */
+    /* Adjust transition to include background-color, color, and border-color */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
+    /* Override generic card hover shadow if it doesn't fit the inverted hover */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Default subtle shadow for green card */
+}
+
+#results .card h3,
+#results .card p {
+    color: #000000; /* Black text on green background */
+    transition: color 0.4s ease;
+}
+
+#results .card p strong { /* Ensure strong tag inside p is also black */
+    color: #000000; 
+    transition: color 0.4s ease;
+}
+
+
+#results .card .icon {
+    background: rgba(0, 0, 0, 0.08); /* Darker, subtle background for icon on green card */
+    color: #000000; /* Black icon on green card */
+    /* Transition already includes transform, color, background-color from general .card .icon */
+}
+
+/* HOVER STATE FOR RESULTS SECTION CARDS */
+#results .card:hover {
+    background-color: var(--card-bg);    /* Dark background on hover */
+    border-color: var(--accent-color-1); /* Green border on dark hover, as per screenshot */
+    box-shadow: 0 0 25px rgba(0, 255, 163, 0.4); /* Green glow on hover */
+    transform: translateY(-8px) scale(1.03); /* Keep existing hover transform */
+}
+
+#results .card:hover h3 {
+    color: var(--text); /* White text for h3 on dark hover */
+}
+
+#results .card:hover p {
+    color: var(--subtext); /* Subtext color for paragraphs on dark hover */
+}
+
+#results .card:hover p strong {
+    color: var(--text); /* White for strong text on dark hover, or var(--accent-color-1) for green */
+}
+
+
+#results .card:hover .icon {
+    background: rgba(0, 255, 163, 0.1); /* Original icon background: light green area */
+    color: var(--accent-color-1);       /* Green icon color */
+    transform: scale(1.15) rotate(5deg); /* Keep icon animation */
+}
+
+/* --- End of Results Section Card Styles --- */
     #trusted-by .grid {  
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      max-width: 900px; 
       gap: 30px;  
-      align-items: center;  
+      align-items: center;
+      justify-content: center;
     }
 
     .partner {  
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 80px; /* Container for partner logo */
-      padding: 5px; /* Add some padding around logos */
+      height: 80px;  
+      padding: 10px; 
       box-sizing: border-box;
     }
     .partner img {
-      height: 70px;   /* UPDATED: Fixed height */
-      width: auto;    /* UPDATED: Let width adjust proportionally */
-      max-width: 160px; /* UPDATED: Max width to constrain very wide logos */
-      object-fit: contain; /* UPDATED: Ensures image scales down to fit */
+      max-width: 100%;   
+      max-height: 100%;  
+      width: auto;       
+      height: auto;      
+      object-fit: contain; 
       filter: grayscale(100%) opacity(0.7);  
       transition: filter 0.3s ease;
     }
     .partner img:hover {
       filter: grayscale(0%) opacity(1);
     }
+    /* Add these styles to your existing <style> block */
+
+.final-cta-section {
+  background-color: var(--card-bg); /* Using card background for a slight differentiation */
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.final-cta-container { /* Specific container for this CTA for better control */
+  max-width: 700px; /* Optimal width for centered text block */
+  margin: 0 auto;
+}
+
+.final-cta-title { /* Using a class for more specific targeting if needed */
+  font-size: 34px; /* Prominent headline */
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.final-cta-subtext { /* Using a class for more specific targeting */
+  font-size: 18px;
+  color: var(--subtext);
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+  line-height: 1.7;
+}
+
+.final-cta-button { /* Make the button slightly more prominent */
+  padding: 15px 35px;
+  font-size: 17px;
+  font-weight: 600;
+  /* It will inherit styles from .primary-cta, including background: var(--accent-color-1); */
+}
+
+/* Responsive adjustments for the Final CTA section */
+@media (max-width: 768px) {
+  .final-cta-section {
+    padding: 50px 20px;
+  }
+  .final-cta-title {
+    font-size: 28px;
+  }
+  .final-cta-subtext {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+  .final-cta-button {
+    padding: 14px 30px;
+    font-size: 16px;
+  }
+}
     
     .footer {
       background: #080808;  
@@ -431,10 +537,10 @@
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid transparent;  
-      display: inline-flex; /* Helps with vertical alignment of text */
-      align-items: center;   /* Helps with vertical alignment of text */
-      justify-content: center; /* Helps with vertical alignment of text */
-      line-height: normal;     /* Reset line height */
+      display: inline-flex; 
+      align-items: center;   
+      justify-content: center; 
+      line-height: normal;     
     }
 
     .primary-cta {
@@ -608,9 +714,9 @@
     }
 
     @media (max-width: 768px) {
-      .navbar { padding: 15px 20px; /* height: auto; Let content define height */ }
+      .navbar { padding: 15px 20px; /* height: auto; already done */ }
       .nav-links { display: none; }
-      .nav-logo img { height: 40px; } /* Mobile logo size */
+      .nav-logo img { height: 40px; } 
 
       .hero {
         min-height: auto; 
@@ -676,16 +782,15 @@
       .psychology-card h3 { font-size: 20px; }
 
       #trusted-by .grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
-        max-width: 800px; 
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted for mobile */
+        max-width: 100%; 
         gap: 20px;
       }
-      #trusted-by .partner img { /* UPDATED Mobile partner logo size */
-        height: 35px; 
-        width: auto;
-        max-width: 100px;
-        object-fit: contain;
+       .partner {
+        height: 60px; /* Adjusted partner container height for mobile */
+        padding: 5px;
       }
+      /* Partner img will scale within this */
 
       .footer-container {
         flex-direction: column;
@@ -818,6 +923,27 @@
     </div>
   </div>
 </section>
+
+<section class="section" id="results"> <h2>Drive Real Growth with Gamixter</h2>
+  <p class="subtext">Our pre-built mechanics consistently deliver measurable improvements in player engagement and platform revenue.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3>Boost Player Engagement</h3>
+      <p><strong>Up to +25% Daily Active Users</strong><br>Keep players captivated and returning for more with mechanics designed for sustained interaction.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💸</div>
+      <h3>Drive Higher Revenue</h3>
+      <p><strong>+15% Average Revenue Per User</strong><br>Encourage desired player behaviors and spending patterns through rewarding and compelling game loops.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔄</div>
+      <h3>Increase Player Loyalty</h3>
+      <p><strong>Reduce Churn by up to 20%</strong><br>Foster a loyal player base that feels valued and motivated to stay active on your platform long-term.</p>
+    </div>
+  </div>
+</section>
   
 <section class="section" id="trusted-by">
   <h2>Partners</h2>
@@ -830,8 +956,19 @@
       <img src="https://i.ibb.co/zW3YLtfZ/Slotegrator-H-white2000.png" alt="Slotegrator Logo" />
     </div>
     <div class="partner">
-      <img src="https://i.ibb.co/VWqTvf3f/bitz-1.png" alt="Bitz Logo" />
-    </div>
+      <img src="https://i.ibb.co/VWqTvf3f/bitz-1.png" alt="Bitz Logo" /> </div>
+  </div>
+</section>
+  <section class="section final-cta-section" id="final-cta">
+  <div class="container final-cta-container">
+    <h2 class="final-cta-title">Ready to Transform Your Player Experience?</h2>
+    <p class="subtext final-cta-subtext">
+      See Gamixter in action! Discover how our pre-built gamification mechanics
+      can be launched on your platform in **under 24 hours**, boosting engagement and revenue.
+    </p>
+    <button class="primary-cta open-popup-trigger final-cta-button">
+      🚀 Request Your Personalized Demo
+    </button>
   </div>
 </section>
   
@@ -842,7 +979,7 @@
     <div class="footer-links">
       <a href="#how-it-works">How it Works</a>
       <a href="#core-mechanics">Core Mechanics</a>
-      <a href="#">Terms & Conditions</a> <a href="#">Privacy Policy</a>
+      <a href="#results">Results</a> <a href="#">Terms & Conditions</a> <a href="#">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
