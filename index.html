@@ -691,7 +691,7 @@
         line-height: 1.5;
     }
 
-    #form-status.success {
+    #form-status.success { /* Though not used for success message now, kept for completeness */
         background-color: var(--card-bg); 
         border: 1px solid var(--accent-color-1);
         color: var(--accent-color-1);
@@ -702,6 +702,34 @@
         border: 1px solid var(--error-color);
         color: var(--error-color);
     }
+
+    /* Styles for the thanks message content */
+    .thanks-popup-content {
+        text-align: center;
+        color: var(--text); /* Ensure text is visible */
+    }
+    .thanks-popup-content p {
+        margin-bottom: 15px; /* Default margin for paragraphs */
+        line-height: 1.6;
+        color: var(--subtext); /* Default color for paragraphs */
+    }
+    .thanks-popup-content p:first-child { /* Style for the main "successfully sent" message */
+        font-size: 1.2em;
+        color: var(--text); /* Make main message more prominent */
+        margin-bottom: 20px;
+    }
+    .thanks-popup-content .primary-cta { /* Ensure CTA button style is applied */
+        margin-top: 10px;
+        margin-bottom: 25px;
+        text-decoration: none; /* Remove underline if 'a' tag is used as button */
+        display: inline-block; /* For proper margin and padding application */
+    }
+    .thanks-popup-content .sub-message { /* For the "We'll be in touch" line */
+        font-size: 0.9em;
+        color: var(--subtext);
+        margin-top: 20px;
+    }
+
 
     @media (max-width: 992px) {
       .hero .container {
@@ -846,7 +874,7 @@
         <ul class="benefits">
           <li>✅ Achieve <strong>+20% player session length</strong></li>
           <li>💰 Reduce <strong>bonus cost by up to 30%</strong></li>
-          <li>⚡ <strong>Launch Ready:</strong> Pre-built for &lt;24h deployment, no CRM changes needed.</li>
+          <li>⚡ <strong>Launch Ready:</strong> Pre-built for <24h deployment, no CRM changes needed.</li>
         </ul>
         <div class="cta-row">
           <button class="primary-cta open-popup-trigger">🚀 Book a Demo</button> 
@@ -991,13 +1019,14 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; <span id="current-year"></span> Gamixter. All rights reserved.</p>
+    <p>© <span id="current-year"></span> Gamixter. All rights reserved.</p>
   </div>
 </footer>
 
 <div id="popup-form" class="popup">
   <div class="popup-content">
-    <button id="close-popup" class="close-popup">&times;</button> <h2>Book a Demo</h2>
+    <button id="close-popup" class="close-popup">×</button>
+    <h2>Book a Demo</h2>
     <form id="demo-form" action="https://usebasin.com/f/553146f392c9" method="POST"> 
       <input type="hidden" name="_subject" value="New Demo Request from Gamixter Website!">
       <div class="form-group">
@@ -1019,6 +1048,9 @@
       <button type="submit" class="submit-btn">Submit Request</button>
     </form>
     <div id="form-status"></div>
+    <div id="thanks-message-container" class="thanks-popup-content" style="display: none;">
+        <!-- Content injected by JavaScript on successful submission -->
+    </div>
   </div>
 </div>
 
@@ -1026,17 +1058,36 @@
   const popup = document.getElementById("popup-form");
   const openPopupButtons = document.querySelectorAll(".open-popup-trigger");
   const closePopupButton = document.getElementById("close-popup");
+  const demoForm = document.getElementById('demo-form');
   const formStatusDiv = document.getElementById('form-status');
-  const demoForm = document.getElementById('demo-form'); 
+  const thanksMessageContainer = document.getElementById('thanks-message-container');
+  const popupTitleEl = popup.querySelector('.popup-content h2');
 
   openPopupButtons.forEach(button => {
     button.addEventListener("click", (event) => {
-      event.preventDefault();  
+      event.preventDefault();
       popup.style.display = "flex";
-      formStatusDiv.style.display = 'none';  
-      formStatusDiv.className = '';  
-      if (demoForm) demoForm.style.display = 'block'; 
-      if (demoForm) demoForm.reset(); 
+
+      if (demoForm) {
+          demoForm.reset();
+          demoForm.style.display = 'block'; // Ensure form is visible
+          const submitButton = demoForm.querySelector('.submit-btn');
+          if (submitButton) {
+              submitButton.disabled = false; // Re-enable button
+              // Consider resetting button text if it changes on submit
+          }
+      }
+      if (formStatusDiv) {
+          formStatusDiv.style.display = 'none';
+          formStatusDiv.className = ''; // Clear any error/success classes
+      }
+      if (thanksMessageContainer) {
+          thanksMessageContainer.style.display = 'none'; // Hide thanks message
+          thanksMessageContainer.innerHTML = ''; // Clear its content
+      }
+      if (popupTitleEl) {
+          popupTitleEl.textContent = 'Book a Demo'; // Reset title
+      }
     });
   });
 
@@ -1116,15 +1167,15 @@
       }
       
       const formData = new FormData(demoForm);
-      if (siteInput.value.trim() !== siteValue) {
+      if (siteInput.value.trim() !== siteValue) { // Update FormData if we prefixed http/https
         formData.set('site', siteValue);
       }
 
       const submitButton = demoForm.querySelector('.submit-btn');
       const originalButtonText = submitButton.textContent;
       
-      formStatusDiv.style.display = 'none'; 
-      formStatusDiv.className = '';  
+      if (formStatusDiv) formStatusDiv.style.display = 'none'; 
+      if (thanksMessageContainer) thanksMessageContainer.style.display = 'none';
       
       submitButton.disabled = true;
       submitButton.textContent = 'Sending...';
@@ -1140,44 +1191,82 @@
         if (response.ok) {
           return response.json(); 
         } else {
+          // Attempt to parse error JSON, then fall back
           return response.json().then(errorData => {
             let message = "Submission failed.";
-            if (errorData && errorData.errors) {
-              message = Object.values(errorData.errors).flat().join(' ');
+            if (errorData && errorData.errors && Object.keys(errorData.errors).length > 0) {
+                message = Object.values(errorData.errors).map(errArray => errArray.join(', ')).join('; ');
             } else if (errorData && errorData.error) {
-              message = errorData.error;
+                message = errorData.error;
             } else if (errorData && errorData.message) {
                message = errorData.message;
             } else {
               message = `Server error: ${response.status}. Please try again.`;
             }
             return Promise.reject(new Error(message));
-          }).catch(parsingError => {
-              console.error("Failed to parse error JSON or non-JSON error response:", parsingError);
+          }).catch(parsingError => { // Catch if response.json() fails or if it's not JSON
+              console.error("Failed to parse error JSON or non-JSON error response:", parsingError, response);
               throw new Error(`Submission failed. Status: ${response.status}. Please try again.`);
           });
         }
       })
       .then(data => {  
-        if (data.success) { 
-            demoForm.style.display = 'none'; 
+        if (data.success) { // Check for UseBasin's success flag
+            if (demoForm) demoForm.style.display = 'none'; // Hide the form
+            if (formStatusDiv) formStatusDiv.style.display = 'none'; // Hide the old status div
 
-            formStatusDiv.textContent = 'Thank you! Your demo request has been sent.';
-            formStatusDiv.className = 'success';  
-            formStatusDiv.style.display = 'block'; 
+            if (popupTitleEl) {
+                popupTitleEl.textContent = 'Thank You!'; // Change title
+            }
+
+            if (thanksMessageContainer) {
+                thanksMessageContainer.innerHTML = `
+                   <p>Your demo request has been sent successfully!</p>
+                   <p>To expedite the process and secure your spot, you can schedule a call with us directly:</p>
+                   <a href="https://calendar.notion.so/meet/abeyerbah/call" target="_blank" class="primary-cta">🗓️ Schedule Your Call</a>
+                   <p class="sub-message">We'll also be in touch via email shortly to confirm your request.</p>
+                `;
+                thanksMessageContainer.style.display = 'block'; // Show the thanks message
+            }
             
-        } else {
-            throw new Error(data.message || 'Submission was processed but reported an issue.');
+            // Track successful submission with Google Analytics
+            if (typeof gtag === 'function') {
+              gtag('event', 'demo_request_success', {
+                'event_category': 'Form Submission',
+                'event_label': 'Demo Request Sent'
+              });
+            }
+            
+        } else { // Handle cases where UseBasin returns success:false or other non-OK but JSON response
+            let errorMessage = "Submission failed. Please try again.";
+            if (data && data.errors && Object.keys(data.errors).length > 0) {
+                errorMessage = Object.values(data.errors).map(errArray => errArray.join(', ')).join('; ');
+            } else if (data && data.error) {
+                errorMessage = data.error;
+            } else if (data && data.message) {
+                 errorMessage = data.message;
+            }
+            
+            if (formStatusDiv) {
+                formStatusDiv.textContent = 'Error: ' + errorMessage;
+                formStatusDiv.className = 'error';  
+                formStatusDiv.style.display = 'block';
+            }
         }
       })
-      .catch(error => {
-        formStatusDiv.textContent = 'Error: ' + error.message;
-        formStatusDiv.className = 'error';  
-        formStatusDiv.style.display = 'block';
+      .catch(error => { // Catches network errors and errors from the .then(response => ...) Promise.reject
+        if (formStatusDiv) {
+            formStatusDiv.textContent = 'Error: ' + error.message;
+            formStatusDiv.className = 'error';  
+            formStatusDiv.style.display = 'block';
+        }
       })
       .finally(() => {
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
+        // Only re-enable the button and reset text if the form is still meant to be visible (i.e., an error occurred)
+        if (demoForm && demoForm.style.display !== 'none') {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+        }
       });
     });
   }
