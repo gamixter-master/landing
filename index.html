@@ -163,7 +163,7 @@
         cursor: pointer;
         transition: background-color 0.3s ease, border-color 0.3s ease;
     }
-    .character-card:hover {
+    .character-card.is-active, .character-card:hover {
         background-color: var(--card-bg);
         border-color: var(--accent-color-1);
     }
@@ -177,7 +177,7 @@
         justify-content: center;
         transition: transform 0.4s ease-in-out;
     }
-    .character-card:hover .character-visible {
+    .character-card.is-active .character-visible, .character-card:hover .character-visible {
         transform: translateY(-50px);
     }
     .character-icon {
@@ -186,7 +186,7 @@
         margin-bottom: 16px;
         transition: transform 0.4s ease-in-out;
     }
-    .character-card:hover .character-icon {
+    .character-card.is-active .character-icon, .character-card:hover .character-icon {
         transform: scale(0.9);
     }
     .character-role {
@@ -209,7 +209,7 @@
         transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
         transition-delay: 0.1s;
     }
-    .character-card:hover .character-hidden {
+    .character-card.is-active .character-hidden, .character-card:hover .character-hidden {
         opacity: 1;
         transform: translateY(0);
     }
@@ -712,28 +712,40 @@
             }
             return response.json().then(errorData => {
                 let message = "Submission failed.";
-                if (errorData && errorData.message) {
-                    message = errorData.message;
-                } else {
-                    message = `Server error: ${response.status}. Please try again.`;
+                if (errorData && errorData.errors && Object.keys(errorData.errors).length > 0) {
+                   message = Object.values(errorData.errors).map(errArray => errArray.join(', ')).join('; ');
+                } else if (errorData && errorData.error) { 
+                   message = errorData.error;
+                } else if (errorData && errorData.message) {
+                   message = errorData.message;
+                } else { 
+                   message = `Server error: ${response.status}. Please try again.`;
                 }
                 return Promise.reject(new Error(message));
             });
         })
         .then(data => {  
-            if (demoForm) demoForm.style.display = 'none';
-            if (formStatusDiv) formStatusDiv.style.display = 'none';
-            if (popupTitleEl) popupTitleEl.textContent = 'Thank You!';
-            if (thanksMessageContainer) {
-                thanksMessageContainer.innerHTML = `
-                     <p>Your demo request has been sent successfully!</p>
-                     <p>To expedite the process and secure your spot, you can schedule a call with us directly:</p>
-                     <a href="https://calendar.notion.so/meet/abeyerbah/call" target="_blank" class="primary-cta">🗓️ Schedule Your Call</a>
-                     <p class="sub-message">We'll also be in touch via email shortly to confirm your request.</p>`;
-                thanksMessageContainer.style.display = 'block';
-            }
-            if (typeof gtag === 'function') {
-              gtag('event', 'demo_request_success', { 'event_category': 'Form Submission', 'event_label': 'Demo Request Sent' });
+            if (data.success) {
+                if (demoForm) demoForm.style.display = 'none';
+                if (formStatusDiv) formStatusDiv.style.display = 'none';
+                if (popupTitleEl) popupTitleEl.textContent = 'Thank You!';
+                if (thanksMessageContainer) {
+                    thanksMessageContainer.innerHTML = `
+                         <p>Your demo request has been sent successfully!</p>
+                         <p>To expedite the process and secure your spot, you can schedule a call with us directly:</p>
+                         <a href="https://calendar.notion.so/meet/abeyerbah/call" target="_blank" class="primary-cta">🗓️ Schedule Your Call</a>
+                         <p class="sub-message">We'll also be in touch via email shortly to confirm your request.</p>`;
+                    thanksMessageContainer.style.display = 'block';
+                }
+                if (typeof gtag === 'function') {
+                  gtag('event', 'demo_request_success', { 'event_category': 'Form Submission', 'event_label': 'Demo Request Sent' });
+                }
+            } else {
+                let errorMessage = "Submission failed. Please try again.";
+                if (data && data.errors && Object.keys(data.errors).length > 0) errorMessage = Object.values(data.errors).map(errArray => errArray.join(', ')).join('; ');
+                else if (data && data.error) errorMessage = data.error;
+                else if (data && data.message) errorMessage = data.message;
+                if (formStatusDiv) { formStatusDiv.textContent = 'Error: ' + errorMessage; formStatusDiv.className = 'error'; formStatusDiv.style.display = 'block'; }
             }
         })
         .catch(error => { 
@@ -751,6 +763,21 @@
         });
       });
     }
+    
+    // Character card mobile tap functionality
+    const characterCards = document.querySelectorAll('.character-card');
+    characterCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const wasActive = this.classList.contains('is-active');
+            characterCards.forEach(otherCard => {
+                otherCard.classList.remove('is-active');
+            });
+            if (!wasActive) {
+                this.classList.add('is-active');
+            }
+        });
+    });
+
   </script>
 
   <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="cd6484eb00b6e53b73f3fabe-|49" defer></script>
