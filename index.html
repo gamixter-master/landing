@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gamixter – Pre-Built Gamification | Live in 1 Day</title>
+  <title>Gamixter – Pre‑Built Gamification | Live in 1 Day</title>
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon-new.png" type="image/png" sizes="32x32">
@@ -11,1308 +11,747 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Launch pre-built gamification on your iGaming platform in 1 day with Gamixter. Boost player retention, session length, and revenue effortlessly.">
-  <meta name="keywords" content="gamification, igaming, player retention, player engagement, casino tools, betting tools, pre-built gamification">
+  <meta name="description" content="Fast‑dopamine gamification for iGaming operators. Launch in under 24h, increase repeat deposits and retention while cutting bonus costs.">
+  <meta name="keywords" content="gamification, igaming, player retention, player engagement, casino tools, betting tools, pre-built gamification, jackpots, missions, tournaments">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Gamixter – Pre-Built Gamification | Live in 1 Day">
-  <meta property="og:description" content="Launch pre-built gamification on your iGaming platform in 1 day with Gamixter. Boost player retention, session length, and revenue effortlessly.">
+  <meta property="og:title" content="Gamixter – Pre‑Built Gamification | Live in 1 Day">
+  <meta property="og:description" content="Activate ready mechanics that lift deposits and retention without CRM changes. Go live fast.">
   <meta property="og:image" content="https://i.ibb.co/Xk7s56BD/mainscreen-1.png">
   <meta property="og:url" content="https://gamixter.com">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gamixter – Pre-Built Gamification | Live in 1 Day">
-  <meta name="twitter:description" content="Launch pre-built gamification on your iGaming platform in 1 day with Gamixter. Boost player retention, session length, and revenue effortlessly.">
+  <meta name="twitter:title" content="Gamixter – Pre‑Built Gamification | Live in 1 Day">
+  <meta name="twitter:description" content="Activate ready mechanics that lift deposits and retention without CRM changes. Go live fast.">
   <meta name="twitter:image" content="https://i.ibb.co/Xk7s56BD/mainscreen-1.png">
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5LH3HSDRCD"></script>
-  <script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5LH3HSDRCD" type="cd6484eb00b6e53b73f3fabe-text/javascript"></script>
+  <script type="cd6484eb00b6e53b73f3fabe-text/javascript">
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){dataLayer.push(arguments);} 
     gtag('js', new Date());
     gtag('config', 'G-5LH3HSDRCD');
   </script>
-</head>
+
   <style>
     :root {
       --bg: #0b0b0b;
       --text: #ffffff;
       --subtext: #b0b0b0;
       --accent-color-1: #00ffa3; 
-      --accent-color-2: #00ffa3; 
+      --accent-color-2: #57b7ff; 
       --border: #1a1a1a;
-      --card-bg: #151515;
+      --card-bg: #2a2a2a; /* graphite */
       --card-border: #1f1f1f; 
       --popup-bg: #2e2e2e;
       --error-color: #ff4d4d;  
     }
 
-    body {
-      margin: 0;
-      font-family: 'Manrope', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
+    body { margin:0; font-family:'Manrope',sans-serif; background:var(--bg); color:var(--text); scroll-behavior:smooth; overflow-x:hidden; }
+    a { color:var(--subtext); text-decoration:none; transition:color .3s ease; }
+    a:hover{ color:var(--text);} 
 
-    a {
-      color: var(--subtext);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+    .navbar { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background:var(--bg); position:sticky; top:0; z-index:1000; box-sizing:border-box; }
+    .nav-logo img { height:56px; width:auto; display:block; }
+    .nav-links { display:flex; align-items:center; }
+    .nav-links a:not(.demo-cta-nav){ margin-left:24px; font-size:15px; padding:10px 0; display:inline-block; line-height:1.2; }
+    .demo-cta-nav{ padding:10px 20px; background:var(--accent-color-1); border-radius:6px; color:#000; font-weight:600; margin-left:24px; transition: transform .3s ease, box-shadow .3s ease; display:inline-flex; align-items:center; justify-content:center; }
+    .demo-cta-nav:hover{ color:#000; transform:scale(1.05); box-shadow:0 0 10px var(--accent-color-1);} 
 
-    a:hover {
-      color: var(--text);
-    }
+    .hero{ padding:0; min-height:calc(100vh - 96px); display:flex; align-items:center; background:var(--bg); overflow:hidden; position:relative; }
+    .hero .container{ display:flex; flex-direction:row; align-items:center; justify-content:space-between; max-width:1200px; width:95%; margin:0 auto; padding:40px 20px; gap:30px; position:relative; z-index:2; }
+    .hero .text-block{ flex:1 1 45%; max-width:580px; }
+    .hero .text-block h1{ font-size:48px; font-weight:800; margin-bottom:18px; line-height:1.15; }
+    .hero .hero-title-line{ display:block; }
+    .hero .subhead{ font-size:17px; color:var(--subtext); line-height:1.55; margin-bottom:22px; }
+    .hero .benefits{ list-style:none; padding:0; margin:0 0 26px 0; font-size:15px; }
+    .hero .benefits li{ margin-bottom:10px; color:var(--subtext);} 
+    .hero .benefits li strong{ 
+        background-color: var(--accent-color-1);
+        color: #000;
+        padding: 3px 8px;
+        border-radius: 5px;
+        font-weight: 600;
+        display: inline-block;
+        margin-right: 5px;
+    } 
+    .hero .cta-row{ display:flex; gap:16px; margin-bottom:16px; align-items:center; }
+    .hero .microcopy{ font-size:14px; color:var(--subtext); margin-bottom:0; }
+    .hero .visual{ flex:1 1 55%; display:flex; align-items:center; justify-content:center; }
+    .hero .visual img{ max-width:100%; height:auto; max-height:75vh; border-radius:16px; object-fit:contain; }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center; 
-      padding: 20px 40px; 
-      background: var(--bg);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-sizing: border-box;
-    }
+    .section{ padding:80px 40px; text-align:center; }
+    .section h2{ font-size:36px; font-weight:800; margin-bottom:16px; color:var(--text); }
+    .section p.subtext{ font-size:18px; color:var(--subtext); max-width:640px; margin:0 auto 40px auto; line-height:1.6; }
 
-    .nav-logo img {
-      height: 56px; 
-      width: auto;
-      display: block; 
-      vertical-align: middle; 
+    .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:24px; max-width:1200px; margin:0 auto; text-align:left; }
+
+    /* Cards: graphite by default */
+    .card{ background:var(--card-bg); border:1px solid var(--card-border); border-radius:16px; padding:28px 24px; display:flex; flex-direction:column; align-items:center; text-align:center; transition: all .35s ease; min-height:220px; justify-content:flex-start; }
+    
+    /* UNIFIED HOVER STATE */
+    .card:hover, .psychology-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 25px rgba(0,255,163,.25);
     }
     
-    .nav-links {
-      display: flex;
-      align-items: center; 
-    }
-
-    .nav-links a:not(.demo-cta-nav) { 
-      margin-left: 24px;
-      font-size: 15px;
-      padding: 10px 0; 
-      display: inline-block; 
-      line-height: 1.2; 
-    }
-
-    .demo-cta-nav { 
-      padding: 10px 20px;
-      background: var(--accent-color-1); 
-      border-radius: 6px;
-      color: #000;
-      font-weight: 600;
-      margin-left: 24px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      line-height: normal; 
-      display: inline-flex; 
-      align-items: center;  
-      justify-content: center; 
-    }
-    .demo-cta-nav:hover {
-      color: #000;
-      transform: scale(1.05);
-      box-shadow: 0 0 10px var(--accent-color-1);
-    }
-
-    .hero {
-      padding: 0; 
-      min-height: calc(100vh - 96px); 
-      display: flex;
-      align-items: center; 
-      background: var(--bg); 
-      overflow: hidden; 
-      position: relative; 
-    }
-
-    .hero .container {
-      display: flex;
-      flex-direction: row; 
-      align-items: center; 
-      justify-content: space-between; 
-      max-width: 1200px;  
-      width: 95%; 
-      margin: 0 auto;
-      padding: 40px 20px; 
-      gap: 30px; 
-      position: relative; 
-      z-index: 2; 
-    }
-
-    .hero .text-block {
-      flex: 1 1 45%; 
-      max-width: 580px; 
-      z-index: 2; 
-      position: relative; 
-    }
-
-    .hero .text-block h1 {  
-      font-size: 48px; 
-      font-weight: 700;
-      margin-bottom: 20px; 
-      line-height: 1.15;
-    }
-    .hero .hero-title-line {
-        display: block;
-    }
-
-    .hero .subhead {
-      font-size: 17px; 
-      color: var(--subtext);
-      line-height: 1.55; 
-      margin-bottom: 24px; 
-    }
-
-    .hero .benefits {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 28px 0; 
-      font-size: 15px; 
-    }
-    .hero .benefits li { 
-        margin-bottom: 10px; 
-        color: var(--subtext); 
-    }
-    .hero .benefits li strong { color: var(--text); }
-
-    .hero .cta-row { 
-        display: flex;
-        gap: 16px; 
-        margin-bottom: 16px; 
-        align-items: center; 
-    }
-    .hero .microcopy { font-size: 14px; color: var(--subtext); margin-bottom: 0; }
-
-    .hero .visual {
-      flex: 1 1 55%; 
-      display: flex;
-      align-items: center;
-      justify-content: center; 
-      height: auto; 
-      position: relative;
-    }
-
-    .hero .visual img {
-      max-width: 100%; 
-      height: auto; 
-      max-height: 75vh; 
-      border-radius: 16px; 
-      object-fit: contain; 
-    }
-    
-    .section {
-      padding: 80px 40px;  
-      text-align: center;  
-    }
-
-    .section h2 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: var(--text);  
-    }
-
-    .section p.subtext {  
-      font-size: 18px;
-      color: var(--subtext);
-      max-width: 640px;
-      margin: 0 auto 40px auto;  
-      line-height: 1.6;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;  
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: left;  
-    }
-    
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 28px 24px;  
-      display: flex;
-      flex-direction: column;
-      align-items: center;  
-      text-align: center;  
-      transition: transform 0.4s ease, box-shadow 0.4s ease; 
-      min-height: 220px;  
-    }
-
     .card:hover {
-      transform: translateY(-8px) scale(1.03); 
-      box-shadow: 0 0 30px 5px rgba(0, 255, 163, 0.6),
-                  0 0 50px 10px rgba(0, 255, 163, 0.35);
-    }
-
-    .card .icon {  
-      font-size: 30px;  
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(0, 255, 163, 0.1); 
-      color: var(--accent-color-1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;  
-      flex-shrink: 0;
-      transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; 
-    }
-
-    .card:hover .icon {
-      transform: scale(1.15) rotate(5deg); 
-    }
-
-    .card h3 {
-      font-size: 20px;  
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    .card p {
-      font-size: 15px;
-      color: var(--subtext);
-      line-height: 1.5;
-    }
-
-    .card.special {  
-      background: var(--accent-color-1); 
-      color: #000;
-      border-color: transparent; 
-    }
-    .card.special:hover {
-        transform: translateY(-8px) scale(1.03); 
-        box-shadow: 0 0 25px rgba(0,0,0,0.3); 
-        border-color: transparent; 
-    }
-
-    .card.special h3,
-    .card.special p {
-      color: #000;
-    }
-
-    .card.special .icon {
-      background: rgba(0, 0, 0, 0.1);
-      color: #000;
-    }
-    .card.special:hover .icon {
-        transform: scale(1.15) rotate(5deg); 
-    }
-    
-    .psychology-section {  
-      background: #0e0e0e;  
-    }
-    
-    .psychology-cards-container {  
-      display: grid;  
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .psychology-card {
-      background: #222;  
-      padding: 32px;  
-      border-radius: 12px;
-      text-align: center;
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-      overflow: hidden;  
-    }
-
-    .psychology-card:hover {
-      transform: translateY(-5px) scale(1.02);  
-      box-shadow: 0 0 25px rgba(0, 255, 163, 0.25); 
       background-color: var(--accent-color-1);
     }
-    
-    .psychology-card:hover .icon {
-      transform: rotate(15deg) scale(1.1);
-      background: rgba(0,0,0,0.15);
+
+    .card:hover h3, .card:hover p, .card:hover .role-badge, .card:hover strong {
       color: #000;
     }
     
-    .psychology-card:hover h3,
-    .psychology-card:hover p {
+    .card:hover .icon {
+      background: rgba(0,0,0,.15);
       color: #000;
+      transform: scale(1.1) rotate(5deg);
     }
+    /* END UNIFIED HOVER STATE */
 
-    .psychology-card .icon {  
-      font-size: 32px;  
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 20px auto;
-      background: rgba(0, 255, 163, 0.1); 
-      color: var(--accent-color-1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .psychology-card h3 {
-      font-size: 22px;  
-      font-weight: 600;  
-      color: var(--text);
-      margin-bottom: 10px;
-      transition: color 0.3s ease;
-    }
-
-    .psychology-card p {
-      color: var(--subtext);
-      font-size: 15px;
-      line-height: 1.6;
-      transition: color 0.3s ease;
-    }
-/* ========= STYLES FOR RESULTS SECTION CARDS (INVERTED THEME) ========= */
-
-#results .card {
-    background-color: var(--accent-color-1); /* Salad green background */
-    border: 1px solid var(--accent-color-1); /* Green border, or a slightly darker shade of green if preferred */
-    color: #000000; /* Default text color for content on green background */
-    /* Adjust transition to include background-color, color, and border-color */
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
-    /* Override generic card hover shadow if it doesn't fit the inverted hover */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Default subtle shadow for green card */
-}
-
-#results .card h3,
-#results .card p {
-    color: #000000; /* Black text on green background */
-    transition: color 0.4s ease;
-}
-
-#results .card p strong { /* Ensure strong tag inside p is also black */
-    color: #000000; 
-    transition: color 0.4s ease;
-}
-
-
-#results .card .icon {
-    background: rgba(0, 0, 0, 0.08); /* Darker, subtle background for icon on green card */
-    color: #000000; /* Black icon on green card */
-    /* Transition already includes transform, color, background-color from general .card .icon */
-}
-
-/* HOVER STATE FOR RESULTS SECTION CARDS */
-#results .card:hover {
-    background-color: var(--card-bg);    /* Dark background on hover */
-    border-color: var(--accent-color-1); /* Green border on dark hover, as per screenshot */
-    box-shadow: 0 0 25px rgba(0, 255, 163, 0.4); /* Green glow on hover */
-    transform: translateY(-8px) scale(1.03); /* Keep existing hover transform */
-}
-
-#results .card:hover h3 {
-    color: var(--text); /* White text for h3 on dark hover */
-}
-
-#results .card:hover p {
-    color: var(--subtext); /* Subtext color for paragraphs on dark hover */
-}
-
-#results .card:hover p strong {
-    color: var(--text); /* White for strong text on dark hover, or var(--accent-color-1) for green */
-}
-
-
-#results .card:hover .icon {
-    background: rgba(0, 255, 163, 0.1); /* Original icon background: light green area */
-    color: var(--accent-color-1);       /* Green icon color */
-    transform: scale(1.15) rotate(5deg); /* Keep icon animation */
-}
-
-/* --- End of Results Section Card Styles --- */
-    #trusted-by .grid {  
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-      max-width: 900px; 
-      gap: 30px;  
-      align-items: center;
-      justify-content: center;
-    }
-
-    .partner {  
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 80px;  
-      padding: 10px; 
-      box-sizing: border-box;
-    }
-    .partner img {
-      max-width: 100%;   
-      max-height: 100%;  
-      width: auto;       
-      height: auto;      
-      object-fit: contain; 
-      filter: grayscale(100%) opacity(0.7);  
-      transition: filter 0.3s ease;
-    }
-    .partner img:hover {
-      filter: grayscale(0%) opacity(1);
-    }
-    /* Add these styles to your existing <style> block */
-
-.final-cta-section {
-  background-color: var(--card-bg); /* Using card background for a slight differentiation */
-  padding: 70px 40px;
-  text-align: center;
-}
-
-.final-cta-container { /* Specific container for this CTA for better control */
-  max-width: 700px; /* Optimal width for centered text block */
-  margin: 0 auto;
-}
-
-.final-cta-title { /* Using a class for more specific targeting if needed */
-  font-size: 34px; /* Prominent headline */
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-
-.final-cta-subtext { /* Using a class for more specific targeting */
-  font-size: 18px;
-  color: var(--subtext);
-  max-width: 600px;
-  margin: 0 auto 32px auto;
-  line-height: 1.7;
-}
-
-.final-cta-button { /* Make the button slightly more prominent */
-  padding: 15px 35px;
-  font-size: 17px;
-  font-weight: 600;
-  /* It will inherit styles from .primary-cta, including background: var(--accent-color-1); */
-}
-
-/* Responsive adjustments for the Final CTA section */
-@media (max-width: 768px) {
-  .final-cta-section {
-    padding: 50px 20px;
-  }
-  .final-cta-title {
-    font-size: 28px;
-  }
-  .final-cta-subtext {
-    font-size: 16px;
-    margin-bottom: 28px;
-  }
-  .final-cta-button {
-    padding: 14px 30px;
-    font-size: 16px;
-  }
-}
+    .card .icon{ font-size:30px; width:56px; height:56px; border-radius:50%; background:rgba(255,255,255,.1); color:var(--accent-color-1); display:flex; align-items:center; justify-content:center; margin-bottom:18px; transition: all .3s ease; flex-shrink: 0; }
+    .card h3{ font-size:20px; font-weight:700; margin-bottom:12px; color:var(--text); transition: color .35s ease;} 
+    .card p{ font-size:15px; color:#d0d0d0; line-height:1.5; transition: color .35s ease;}
+    #core-mechanics .card p { flex-grow: 1; }
     
-    .footer {
-      background: #080808;  
-      color: var(--subtext);
-      padding: 50px 40px 30px 40px;  
-    }
+    /* Bright launch variants - Hover Override */
+    .launch-grid{ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .launch-card{ color: var(--bg); position:relative; overflow:hidden; }
+    .launch-card.prebuild{ background:linear-gradient(135deg,#00ffa3 0%, #21f3ff 100%); border-color:transparent; }
+    .launch-card.custom{ background:linear-gradient(135deg,#5cc2ff 0%, #0077ff 100%); border-color:transparent; }
+    .launch-card .icon{ background:rgba(255,255,255,.22); color:#fff; }
+    .launch-card h3, .launch-card p{ color: var(--bg); }
 
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;  
-      gap: 20px;  
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-bottom: 30px;  
-      border-bottom: 1px solid var(--border); 
-    }
+    .launch-card:hover { background: var(--card-bg); }
+    .launch-card.prebuild:hover { background: linear-gradient(135deg, #00ffa3 0%, #21f3ff 100%); }
+    .launch-card.custom:hover { background: linear-gradient(135deg, #5cc2ff 0%, #0077ff 100%); }
+    .launch-card:hover h3, .launch-card:hover p { color: var(--bg); }
+    .launch-card:hover .icon { background: rgba(255,255,255,.22); color: #fff; }
 
-    .footer-logo img {
-      max-width: 130px;  
-      height: auto;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;  
-      gap: 20px;  
-    }
-
-    .footer-links a {
-      font-size: 14px;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 14px;
-    }
-
-    .primary-cta,
-    .secondary-cta { 
-      padding: 14px 28px;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid transparent;  
-      display: inline-flex; 
-      align-items: center;   
-      justify-content: center; 
-      line-height: normal;     
-    }
-
-    .primary-cta {
-      background: var(--accent-color-1); 
-      color: #000;
-      border: none;  
-    }
-    .primary-cta:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px var(--accent-color-1);
-    }
-
-    .secondary-cta {
-      background: transparent;
-      border: 1px solid var(--card-border); 
-      color: var(--subtext);
-    }
-    .secondary-cta:hover {
-      color: var(--text);
-      border-color: var(--accent-color-1); 
-      transform: scale(1.05);
-    }
-
-    .popup {
-      display: none;  
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);  
-      z-index: 2000;  
-      justify-content: center;
-      align-items: center;
-      padding: 20px;  
-    }
-
-    .popup-content {
-      background-color: var(--popup-bg);
-      padding: 30px 40px;  
-      border-radius: 12px;
-      width: 100%;
-      max-width: 480px;  
-      box-sizing: border-box;
-      position: relative;
-      box-shadow: 0 0 30px rgba(0, 255, 163, 0.1); 
-    }
-
-    .popup h2 {
-      font-size: 28px;  
-      color: var(--text);
-      margin-bottom: 24px;
-      text-align: center;
-      font-family: 'Manrope', sans-serif;  
-      font-weight: 700;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-      width: 100%;
-    }
-
-    .form-group label {
-      font-size: 14px;
-      color: var(--subtext);
-      display: block;
-      margin-bottom: 6px;
-      text-align: left;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 12px 16px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: 1px solid var(--card-border); 
-      background-color: var(--bg);  
-      color: var(--text);
-      box-sizing: border-box;  
-      transition: border-color 0.3s ease;
-    }
-
-    .form-group input:focus {
-      outline: none;
-      border-color: var(--accent-color-1);
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--accent-color-1); 
-      color: #000;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
-    }
-
-    .submit-btn:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 15px var(--accent-color-1);
-    }
+    /* Badges for mechanics */
+    .badges{ margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
+    .badge{ font-size:11px; font-weight:700; letter-spacing:.3px; padding:6px 10px; border-radius:999px; text-transform:uppercase; border:1px solid rgba(255,255,255,.12); transition: all 0.3s ease; } 
+    .badge.retention{ background:rgba(0,255,163,.1); color:#00ffa3; border-color:rgba(0,255,163,.35);} 
+    .badge.acquisition{ background:rgba(0,136,255,.12); color:#57b7ff; border-color:rgba(87,183,255,.45);} 
+    .badge.retention:hover { background: var(--accent-color-1); color: #000; border-color: var(--accent-color-1); }
+    .badge.acquisition:hover { background: var(--accent-color-2); color: #000; border-color: var(--accent-color-2); }
     
-    .submit-btn:disabled {
-        background: var(--subtext);
-        color: var(--bg);
-        cursor: wait;
-        transform: scale(1);
-        box-shadow: none;
-    }
+    /* Core Mechanics - Hover Override */
+    #core-mechanics .card:hover { background-color: var(--card-bg); }
+    #core-mechanics .card:hover h3, #core-mechanics .card:hover p { color: var(--text); }
+    #core-mechanics .card:hover .icon { background: rgba(255,255,255,.1); color: var(--accent-color-1); }
 
-    .close-popup {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 30px;  
-      line-height: 1;
-      color: var(--subtext);
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 5px;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .close-popup:hover {
-      color: var(--accent-color-1);
-      transform: rotate(90deg);
-    }
-
-    #form-status {
-        display: none;
-        padding: 15px;
-        margin-top: 20px;
-        border-radius: 8px;
-        text-align: center;
-        font-size: 15px;
-        line-height: 1.5;
-    }
-
-    #form-status.success { /* Though not used for success message now, kept for completeness */
-        background-color: var(--card-bg); 
-        border: 1px solid var(--accent-color-1);
-        color: var(--accent-color-1);
-    }
-
-    #form-status.error {
-        background-color: var(--card-bg);
-        border: 1px solid var(--error-color);
-        color: var(--error-color);
-    }
-
-    /* Styles for the thanks message content */
-    .thanks-popup-content {
-        text-align: center;
-        color: var(--text); /* Ensure text is visible */
-    }
-    .thanks-popup-content p {
-        margin-bottom: 15px; /* Default margin for paragraphs */
-        line-height: 1.6;
-        color: var(--subtext); /* Default color for paragraphs */
-    }
-    .thanks-popup-content p:first-child { /* Style for the main "successfully sent" message */
-        font-size: 1.2em;
-        color: var(--text); /* Make main message more prominent */
-        margin-bottom: 20px;
-    }
-    .thanks-popup-content .primary-cta { /* Ensure CTA button style is applied */
-        margin-top: 10px;
-        margin-bottom: 25px;
-        text-decoration: none; /* Remove underline if 'a' tag is used as button */
-        display: inline-block; /* For proper margin and padding application */
-    }
-    .thanks-popup-content .sub-message { /* For the "We'll be in touch" line */
-        font-size: 0.9em;
-        color: var(--subtext);
-        margin-top: 20px;
-    }
-
-
-    @media (max-width: 992px) {
-      .hero .container {
-        gap: 30px;
-        padding: 40px 20px;
-        width: 90%;
-      }
-      .hero .text-block h1, .hero .hero-title-line { 
-        font-size: 42px; 
-      }
-      .hero .text-block {
-        flex-basis: 50%;
-      }
-      .hero .visual {
-        flex-basis: 50%;
-      }
-       .section h2 { font-size: 32px; }
-    }
-
-    @media (max-width: 768px) {
-      .navbar { padding: 15px 20px; /* height: auto; already done */ }
-      .nav-links { display: none; }
-      .nav-logo img { height: 40px; } 
-
-      .hero {
-        min-height: auto; 
-        padding-top: 20px; 
-        padding-bottom: 40px;
-      }
-      .hero .container {
-        flex-direction: column; 
-        text-align: center; 
-        padding: 20px 15px; 
-        width: 90%;
-      }
-      .hero .visual {
-        order: -1; 
-        margin-bottom: 20px; 
-        width: 100%; 
-        max-width: 300px; 
-        flex-basis: auto;
-      }
-      .hero .visual img {
-        max-height: 50vh; 
-      }
-      .hero .text-block {
-        order: 2; 
-        max-width: 100%; 
-        text-align: center; 
-        flex-basis: auto;
-      }
-      .hero .text-block h1, .hero .hero-title-line {
-        font-size: 30px; 
-      }
-      .hero .subhead {
-        font-size: 15px; 
-        margin-bottom: 20px; 
-      }
-       .hero .benefits {
-        margin: 0 0 24px 0; 
-        font-size: 14px; 
-      }
-      .hero .benefits li { 
-        margin-bottom: 8px; 
-      } 
-      .hero .cta-row {
-        flex-direction: column;
-        align-items: center; 
-        width: 100%;
-      }
-      .hero .primary-cta, .hero .secondary-cta {
-        width: 100%;
-        max-width: 300px; 
-      }
-
-      .section { padding: 60px 20px; }
-      .section h2 { font-size: 28px; }
-      .section p.subtext { font-size: 16px; margin-bottom: 30px; }
-      .grid { gap: 20px; }
-      .card { padding: 20px; min-height: auto; }
-      .card h3 { font-size: 18px; }
-      .card p { font-size: 14px; }
-      
-      .psychology-cards-container { gap: 20px; }
-      .psychology-card { padding: 24px; }
-      .psychology-card h3 { font-size: 20px; }
-
-      #trusted-by .grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted for mobile */
-        max-width: 100%; 
+    /* FIXED CHALLENGER BLOCK: CHARACTER REVEAL STYLE */
+    .character-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 20px;
-      }
-       .partner {
-        height: 60px; /* Adjusted partner container height for mobile */
-        padding: 5px;
-      }
-      /* Partner img will scale within this */
-
-      .footer-container {
+        max-width: 1200px;
+        margin: 40px auto;
+    }
+    .character-card {
+        background-color: var(--card-border);
+        border: 1px solid transparent;
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+        height: 260px; /* FIXED HEIGHT */
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    .character-card:hover {
+        background-color: var(--card-bg);
+        border-color: var(--accent-color-1);
+    }
+    .character-visible {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        padding: 20px;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
-        padding-bottom: 20px;
-      }
-      .footer-logo img { max-width: 120px; }
-      .footer-links { justify-content: center; }
-      .footer-bottom { margin-top: 20px; }
+        justify-content: center;
+        transition: transform 0.4s ease-in-out;
+    }
+    .character-card:hover .character-visible {
+        transform: translateY(-50px);
+    }
+    .character-icon {
+        font-size: 48px;
+        line-height: 1;
+        margin-bottom: 16px;
+        transition: transform 0.4s ease-in-out;
+    }
+    .character-card:hover .character-icon {
+        transform: scale(0.9);
+    }
+    .character-role {
+        background: var(--accent-color-1);
+        color: #000;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .character-hidden {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        transition-delay: 0.1s;
+    }
+    .character-card:hover .character-hidden {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .character-hidden h3 {
+        color: var(--text);
+        font-size: 20px;
+        margin: 0 0 8px 0;
+    }
+    .character-hidden p {
+        color: var(--subtext);
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+    }
+    
+    .psychology-section{ background:#0e0e0e; }
+    .psychology-cards-container{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:24px; max-width:1200px; margin:0 auto; }
+    .psychology-card{ background:#222; padding:32px; border-radius:12px; text-align:center; transition:all .3s ease; }
+    .psychology-card .icon{ font-size:32px; width:56px; height:56px; margin:0 auto 20px; background:rgba(0,255,163,.1); color:var(--accent-color-1); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:all .3s ease; }
+    .psychology-card:hover{ background-color: var(--accent-color-1);} 
+    .psychology-card:hover .icon{ transform: rotate(15deg) scale(1.1); background: rgba(0,0,0,.15); color:#000; }
+    .psychology-card:hover h3, .psychology-card:hover p{ color:#000; }
 
-      .popup-content {
-        width: calc(100% - 40px);  
-        padding: 25px;
-      }
-      .popup h2 { font-size: 24px; }
+    .partner{ display:flex; justify-content:center; align-items:center; height:90px; padding:10px; box-sizing:border-box; }
+    .partner img{ max-width:100%; max-height:100%; object-fit:contain; filter:grayscale(100%) opacity(.7); transition:all .3s ease; }
+    .partner:hover img { filter:grayscale(0%) opacity(1); transform: scale(1.05); }
+    .partner .logo-wrapper {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        transition: transform 0.3s ease;
+    }
+    .partner:hover .logo-wrapper {
+        transform: scale(1.05);
+    }
+    .logo-wrapper img {
+        filter: none !important;
+        opacity: 1 !important;
+    }
+    
+    .partner-text { font-size: 16px; font-weight: 600; color: var(--subtext); border: 1px solid var(--border); border-radius: 12px; transition: all .3s ease; }
+    .partner-text:hover { color: var(--text); border-color: var(--subtext); }
+
+    .final-cta-section{ background:#151515; padding:70px 40px; text-align:center; }
+    .final-cta-container{ max-width:700px; margin:0 auto; }
+    .final-cta-title{ font-size:34px; font-weight:800; color:var(--text); margin-bottom:20px; line-height:1.3; }
+    .final-cta-subtext{ font-size:18px; color:var(--subtext); max-width:600px; margin:0 auto 32px auto; line-height:1.7; }
+    .final-cta-button{ padding:15px 35px; font-size:17px; font-weight:600; }
+
+    .footer{ background:#080808; color:var(--subtext); padding:50px 40px 30px 40px; }
+    .footer-container{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; max-width:1200px; margin:0 auto; padding-bottom:30px; border-bottom:1px solid var(--border); }
+    .footer-logo img{ max-width:130px; height:auto; }
+    .footer-links{ display:flex; flex-wrap:wrap; gap:20px; }
+    .footer-links a{ font-size:14px; }
+    .footer-bottom{ text-align:center; margin-top:30px; font-size:14px; }
+
+    .primary-cta,.secondary-cta{ padding:14px 28px; font-size:16px; font-weight:600; border-radius:8px; cursor:pointer; transition: transform .3s ease, box-shadow .3s ease; border:1px solid transparent; display:inline-flex; align-items:center; justify-content:center; }
+    .primary-cta{ background:var(--accent-color-1); color:#000; border:none; }
+    .primary-cta:hover{ transform:scale(1.05); box-shadow:0 0 15px var(--accent-color-1);} 
+    .secondary-cta{ background:transparent; border:1px solid var(--card-border); color:var(--subtext);} 
+    .secondary-cta:hover{ color:var(--text); border-color:var(--accent-color-1); transform:scale(1.05);} 
+
+    .popup{ display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.85); z-index:2000; justify-content:center; align-items:center; padding:20px; }
+    .popup-content{ background:var(--popup-bg); padding:30px 40px; border-radius:12px; width:100%; max-width:480px; box-sizing:border-box; position:relative; box-shadow:0 0 30px rgba(0,255,163,.1); }
+    .popup h2{ font-size:28px; color:var(--text); margin-bottom:24px; text-align:center; font-weight:800; }
+    .form-group{ margin-bottom:18px; width:100%; }
+    .form-group label{ font-size:14px; color:var(--subtext); display:block; margin-bottom:6px; text-align:left; }
+    .form-group input{ width:100%; padding:12px 16px; font-size:16px; border-radius:6px; border:1px solid var(--card-border); background:var(--bg); color:var(--text); box-sizing:border-box; transition:border-color .3s ease; }
+    .form-group input:focus{ outline:none; border-color:var(--accent-color-1);} 
+    .submit-btn{ width:100%; padding:14px; background:var(--accent-color-1); color:#000; border-radius:8px; font-size:16px; font-weight:600; border:none; cursor:pointer; transition: transform .3s ease, box-shadow .3s ease; }
+    .submit-btn:hover{ transform:scale(1.03); box-shadow:0 0 15px var(--accent-color-1);} 
+    .submit-btn:disabled{ background:var(--subtext); color:var(--bg); cursor:wait; transform:scale(1); box-shadow:none; }
+    .close-popup{ position:absolute; top:15px; right:15px; font-size:30px; line-height:1; color:var(--subtext); cursor:pointer; background:none; border:none; padding:5px; transition:.3s ease; }
+    .close-popup:hover{ color:var(--accent-color-1); transform:rotate(90deg);} 
+    #form-status{ display:none; padding:15px; margin-top:20px; border-radius:8px; text-align:center; font-size:15px; }
+    #form-status.error{ background:var(--card-bg); border:1px solid var(--error-color); color:var(--error-color);} 
+    
+    /* Thank You Popup Styles */
+    .thanks-popup-content { text-align: center; }
+    .thanks-popup-content p {
+        margin: 0 auto 18px auto;
+        max-width: 380px;
+        line-height: 1.6;
+        color: var(--text);
+    }
+    .thanks-popup-content .primary-cta {
+        margin: 15px auto;
+        width: 100%;
+        max-width: 280px;
+    }
+    .thanks-popup-content .sub-message {
+        font-size: 14px;
+        color: var(--subtext);
+        margin-top: 20px;
+        margin-bottom: 0;
     }
 
+    @media (max-width: 992px){
+      .hero .container{ gap:30px; padding:40px 20px; width:90%; }
+      .hero .text-block h1, .hero .hero-title-line{ font-size:42px; }
+      .hero .text-block{ flex-basis:50%; }
+      .hero .visual{ flex-basis:50%; }
+      .section h2{ font-size:32px; }
+    }
+    @media (max-width: 768px){
+      .navbar{ padding:15px 20px; }
+      .nav-links{ display:none; }
+      .nav-logo img{ height:40px; }
+      .hero{ min-height:auto; padding-top:20px; padding-bottom:40px; }
+      .hero .container{ flex-direction:column; text-align:center; padding:20px 15px; width:90%; }
+      .hero .visual{ order:-1; margin-bottom:20px; width:100%; max-width:300px; }
+      .hero .visual img{ max-height:50vh; }
+      .hero .text-block{ order:2; max-width:100%; text-align:center; }
+      .hero .text-block h1, .hero .hero-title-line{ font-size:30px; }
+      .hero .subhead{ font-size:15px; margin-bottom:20px; }
+      .hero .benefits{ margin:0 0 24px 0; font-size:14px; }
+      .hero .benefits li{ margin-bottom:8px; } 
+      .hero .cta-row{ flex-direction:column; align-items:center; width:100%; }
+      .hero .primary-cta, .hero .secondary-cta{ width:100%; max-width:300px; }
+      .section{ padding:60px 20px; }
+      .section h2{ font-size:28px; }
+      .section p.subtext{ font-size:16px; margin-bottom:30px; }
+      .grid, .character-grid, .grid-v3 { gap:20px; }
+      .card, .card-v3 { padding:20px; min-height:auto; }
+      .character-card { height: 260px; }
+      .card h3, .card-v3 h3, .character-hidden h3 { font-size:20px; }
+      .card p, .card-v3 p, .character-hidden p { font-size:15px; }
+      .psychology-cards-container{ gap:20px; }
+      .psychology-card{ padding:24px; }
+      .psychology-card h3{ font-size:20px; }
+      .footer-container{ flex-direction:column; align-items:center; gap:30px; padding-bottom:20px; }
+      .footer-logo img{ max-width:120px; }
+      .footer-links{ justify-content:center; }
+      .footer-bottom{ margin-top:20px; }
+      .popup-content{ width:calc(100% - 40px); padding:25px; }
+      .popup h2{ font-size:24px; }
+    }
   </style>
 </head>
 <body>
 
   <header class="navbar">
     <div class="nav-logo">
-      <a href="#"> <img src="https://i.ibb.co/HD9hhfBM/Gamixter-Logo-White.png" alt="Gamixter Logo" />
-      </a>
+      <a href="#"> <img src="https://i.ibb.co/HD9hhfBM/Gamixter-Logo-White.png" alt="Gamixter Logo" /></a>
     </div>
     <nav class="nav-links">
+      <a href="#challenges">Challenges</a>
       <a href="#how-it-works">How it works</a>
       <a href="#core-mechanics">Core Mechanics</a>
+      <a href="#ways-to-launch">Ways to launch</a>
+      <a href="#results">Results</a>
       <a href="#trusted-by">Partners</a>
-      <a href="#" class="demo-cta-nav open-popup-trigger">Contact Us</a> </nav>
+      <a href="#" class="demo-cta-nav open-popup-trigger">Contact Us</a>
+    </nav>
   </header>
 
   <section class="hero">
     <div class="container">
       <div class="text-block">
         <h1>
-          <div class="hero-title-line">Launch Pre-Built Gamification</div>
-          <div class="hero-title-line">And Go Live in Just 1 Day.</div>
+          <div class="hero-title-line">The Widest Toolkit of Gamification Mechanics</div>
+          <div class="hero-title-line">Go Live on Your Brand in < 24h</div>
         </h1>
-        <p class="subhead">
-          Instantly boost player retention and revenue on your iGaming platform with our ready-to-launch gamification tools.
-        </p>
+        <p class="subhead">Deploy ready mechanics outside core gameplay. Triggers from your CRM. Fully on‑brand. Measurable from day one.</p>
         <ul class="benefits">
-          <li>✅ Achieve <strong>+20% player session length</strong></li>
-          <li>💰 Reduce <strong>bonus cost by up to 30%</strong></li>
-          <li>⚡ <strong>Launch Ready:</strong> Pre-built for <24h deployment, no CRM changes needed.</li>
+          <li><strong>+22%</strong> repeat transactions per player</li>
+          <li><strong>−28%</strong> bonus cost per user</li>
+          <li><strong>≈ 30 days</strong> Payback in typical launches</li>
         </ul>
         <div class="cta-row">
-          <button class="primary-cta open-popup-trigger">🚀 Book a Demo</button> 
+          <button class="primary-cta open-popup-trigger">🚀 Book a Demo</button>
+          <a class="secondary-cta" href="#ways-to-launch">See how it works</a>
         </div>
-        <p class="microcopy">Activate pre-built engagement tools. See results tomorrow.</p>
+        <p class="microcopy">Used by casino and sportsbook operators and platforms.</p>
       </div>
       <div class="visual">
-        <img src="https://i.ibb.co/Xk7s56BD/mainscreen-1.png" alt="Gamixter Gamification UI on Phone - New Mockup" />
+        <img src="https://i.ibb.co/Xk7s56BD/mainscreen-1.png" alt="Gamixter Gamification UI Mockup" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="challenges">
+    <h2>The Challenger: What blocks growth today</h2>
+    <p class="subtext">Six recurring problems we hear from CRM teams up to the CEO. Gamixter solves them with fast deployment and measurable impact.</p>
+    <div class="character-grid">
+      <div class="character-card">
+        <div class="character-visible">
+          <div class="character-icon">📇</div>
+          <div class="character-role">CRM Manager</div>
+        </div>
+        <div class="character-hidden">
+          <h3>Ops overload</h3>
+          <p>Campaign calendars burn time. Manual setups and limited tooling slow execution and learning.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-visible">
+          <div class="character-icon">🔁</div>
+          <div class="character-role">Retention Lead</div>
+        </div>
+        <div class="character-hidden">
+          <h3>Weak loops</h3>
+          <p>Players do not form habits. Session length and second‑deposit rate plateau after promo peaks.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-visible">
+          <div class="character-icon">🧰</div>
+          <div class="character-role">Product</div>
+        </div>
+        <div class="character-hidden">
+          <h3>Tooling gap</h3>
+          <p>Existing bonus/CRM modules can’t run engaging game loops without custom dev and long QA cycles.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-visible">
+          <div class="character-icon">📣</div>
+          <div class="character-role">CMO</div>
+        </div>
+        <div class="character-hidden">
+          <h3>Rising CAC</h3>
+          <p>Acquisition costs grow while LTV stalls. Brand needs a clear engagement story to convert and re‑activate.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-visible">
+          <div class="character-icon">🧱</div>
+          <div class="character-role">COO</div>
+        </div>
+        <div class="character-hidden">
+          <h3>Backlog risk</h3>
+          <p>Engineering focus sits on core games and compliance. Time‑to‑market for new mechanics stretches to quarters.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-visible">
+          <div class="character-icon">🧭</div>
+          <div class="character-role">CEO</div>
+        </div>
+        <div class="character-hidden">
+          <h3>Margin pressure</h3>
+          <p>NGR growth slows, bonus liability expands. Leadership needs predictable ROI and quick payback.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section" id="how-it-works">
     <h2>Go Live in 3 Simple Steps</h2>
-    <p class="subtext">Our streamlined process gets you up and running, engaging players in under 24 hours.</p>
+    <p class="subtext">Our process gets you engaging players in under 24 hours.</p>
+    <div class="grid">
+      <div class="card"><div class="icon">🧩</div><h3>1. Quick Setup</h3><p>Lightweight integration. No core gameplay or CRM refactoring needed.</p></div>
+      <div class="card"><div class="icon">⚙️</div><h3>2. Activate Mechanics</h3><p>Pick from a library of pre‑built mechanics and map triggers from your CRM.</p></div>
+      <div class="card"><div class="icon">🚀</div><h3>3. Launch & Measure</h3><p>Go live and monitor uplift in repeat deposits, activity, and NGR.</p></div>
+    </div>
+  </section>
+  
+  <section class="section" id="integration-benefits">
+    <h2>Works With Your Current Stack</h2>
+    <p class="subtext">Gamixter is built for fast integration without disrupting core systems.</p>
     <div class="grid">
       <div class="card">
-        <div class="icon">🧩</div>
-        <h3>1. Quick Setup</h3>
-        <p>Integrate Gamixter effortlessly with a lightweight snippet. Ready for a 1-day launch.</p>
+        <div class="icon">🔗</div>
+        <h3>No Bonus Engine Replacement</h3>
+        <p>Our mechanics run alongside your existing bonus and CRM systems, enhancing them, not replacing them.</p>
       </div>
       <div class="card">
-        <div class="icon">⚙️</div>
-        <h3>2. Activate Mechanics</h3>
-        <p>Choose from our library of ready-to-use gamification tools. Zero coding required.</p>
+        <div class="icon">🛡️</div>
+        <h3>Transfer Only The Data You Need</h3>
+        <p>A minimal and secure data exchange, like player actions, is all that’s needed to power the mechanics.</p>
       </div>
       <div class="card">
-        <div class="icon">🚀</div>
-        <h3>3. Launch & Grow</h3>
-        <p>Deploy your strategy immediately and watch player engagement and retention metrics improve from day one.</p>
+        <div class="icon">↔️</div>
+        <h3>Integrates With Your CRM</h3>
+        <p>Gamixter works as a layer on top of your existing CRM. No migration needed. You keep your tools and workflows.</p>
       </div>
     </div>
   </section>
 
   <section class="section" id="core-mechanics">
     <h2>Explore Our Engagement Mechanics</h2>
-    <p class="subtext">Discover a versatile suite of gamification tools designed to captivate players and enhance their experience. Activate them in minutes.</p>
+    <p class="subtext">A versatile suite built to lift deposits, session length, and retention. Each mechanic works with CRM/bonus triggers.</p>
+    <div class="grid">
+      <div class="card"><div class="icon">🎰</div><h3>Jackpot Aggregator</h3><p>Cross‑provider jackpots with segmentation and recharge logic.</p><div class="badges"><span class="badge retention">Retention</span><span class="badge acquisition">Acquisition</span></div></div>
+      <div class="card"><div class="icon">📦</div><h3>Lootboxes</h3><p>Reward boxes with segment‑based probabilities and prize pools.</p><div class="badges"><span class="badge retention">Retention</span><span class="badge acquisition">Acquisition</span></div></div>
+      <div class="card"><div class="icon">🎁</div><h3>Claim Mechanics</h3><p>Time‑ or action‑based claims to build streaks and habit loops.</p><div class="badges"><span class="badge retention">Retention</span></div></div>
+      <div class="card"><div class="icon">🎡</div><h3>Fortune Wheels</h3><p>Spin‑to‑win on deposits, actions, or milestones.</p><div class="badges"><span class="badge retention">Retention</span></div></div>
+      <div class="card"><div class="icon">🎉</div><h3>Giveaways</h3><p>Scheduled or surprise prize draws that spike activity.</p><div class="badges"><span class="badge acquisition">Acquisition</span></div></div>
+      <div class="card"><div class="icon">🗺️</div><h3>Battle Pass</h3><p>Task chains that steer users to target games and behaviors.</p><div class="badges"><span class="badge retention">Retention</span></div></div>
+      <div class="card"><div class="icon">🏆</div><h3>Tournaments</h3><p>Leaderboards that reward volume and keep VIPs competing.</p><div class="badges"><span class="badge retention">Retention</span></div></div>
+      <div class="card"><div class="icon">🎮</div><h3>Special Retention Games</h3><p>Unique mini-games designed to boost engagement and visit frequency.</p><div class="badges"><span class="badge retention">Retention</span></div></div>
+    </div>
+  </section>
+
+  <section class="section psychology-section" id="psychology">
+    <h2>Designed for Player Engagement</h2>
+    <p class="subtext">We leverage proven player psychology to create meaningful engagement.</p>
+    <div class="psychology-cards-container">
+      <div class="psychology-card"><div class="icon">🎮</div><h3>Variable Rewards</h3><p>Unpredictable reward loops that sustain interest and activity.</p></div>
+      <div class="psychology-card"><div class="icon">⏳</div><h3>Loss Aversion</h3><p>Limited‑time incentives and fear‑of‑missing‑out events bring players back.</p></div>
+      <div class="psychology-card"><div class="icon">🎯</div><h3>Progression</h3><p>Clear goals and missions that build a sense of achievement.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <h2>Impact you can plan for</h2>
+    <p class="subtext">Typical outcomes we see after launch on casino and sportsbook brands.</p>
     <div class="grid">
       <div class="card">
-        <div class="icon">🎰</div>
-        <h3>Jackpot Aggregator</h3>
-        <p>Cross-provider jackpots with segmentation and recharge logic.</p>
+        <div class="icon">💳</div>
+        <h3>More repeat transactions</h3>
+        <p><strong>+22% repeat deposits</strong> per player on average after activating daily loops.</p>
       </div>
       <div class="card">
-        <div class="icon">📦</div>
-        <h3>Lootboxes</h3>
-        <p>Reward-based boxes with custom probabilities for each player segment.</p>
+        <div class="icon">📈</div>
+        <h3>Higher net gaming revenue</h3>
+        <p><strong>+18% NGR</strong> uplift from engagement mechanics that extend sessions and guide behavior.</p>
       </div>
       <div class="card">
-        <div class="icon">🎁</div>
-        <h3>Claim Mechanics</h3>
-        <p>Trigger-based or scheduled reward drops to increase activity.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🎡</div>
-        <h3>Fortune Wheels</h3>
-        <p>Spin-to-win wheels for deposits, actions or achievements.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🎉</div>
-        <h3>Giveaways</h3>
-        <p>Host exciting prize draws and contests. Easily configurable and ready to boost participation.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🗺️</div>
-        <h3>Missions</h3>
-        <p>Engage players with structured tasks and challenges. Drive specific actions and reward completion.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🏆</div>
-        <h3>Tournaments</h3>
-        <p>Run competitive leaderboards and tournaments. Fuel player rivalry and reward top performers.</p>
-      </div>
-      <div class="card special">
-        <div class="icon">✨</div>
-        <h3>Versatile & Ever-Growing Toolkit</h3>
-        <p>Seasonal events, bonus enhancements, and new mechanics are regularly added. All designed for quick, no-code activation.</p>
+        <div class="icon">🏦</div>
+        <h3>Lower promo cost per user</h3>
+        <p><strong>−28% bonus cost</strong> through perceived‑value rewards and probability controls.</p>
       </div>
     </div>
   </section>
 
-<section class="section psychology-section" id="psychology"> <h2>Designed for Player Engagement</h2>
-  <p class="subtext">Gamixter mechanics are rooted in proven player psychology. We draw inspiration from top-tier gaming experiences to ensure deep and meaningful engagement, not just bonus spam.</p>
-  <div class="psychology-cards-container">
-    <div class="psychology-card">
-      <div class="icon">🎮</div>
-      <h3>Variable Rewards</h3>
-      <p>Leverage powerful dopamine mechanics that drive continued engagement through unpredictable and exciting rewards.</p>
+  <section class="section" id="ways-to-launch">
+    <h2>Two Ways to Launch</h2>
+    <p class="subtext">Pick the setup that fits your goals and timelines.</p>
+    <div class="grid launch-grid">
+      <div class="card launch-card prebuild">
+        <div class="icon">⚡</div>
+        <h3>Pre‑Build Setup</h3>
+        <p>Proven impact. On‑brand UI. Typical go‑live in under 24 hours.</p>
+      </div>
+      <div class="card launch-card custom">
+        <div class="icon">🧱</div>
+        <h3>Full Custom</h3>
+        <p>Tailored mechanics and flows on Gamixter tech. Your strategy, our engineering.</p>
+      </div>
     </div>
-    <div class="psychology-card">
-      <div class="icon">⏳</div>
-      <h3>Loss Aversion</h3>
-      <p>Create compelling reasons for players to return. Limited-time offers and 'don't miss out' events boost retention.</p>
-    </div>
-    <div class="psychology-card">
-      <div class="icon">🎯</div>
-      <h3>Progression</h3>
-      <p>Implement clear goals and mission structures that give players a sense of achievement and keep them striving for more.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="results"> <h2>Drive Real Growth with Gamixter</h2>
-  <p class="subtext">Our pre-built mechanics consistently deliver measurable improvements in player engagement and platform revenue.</p>
-  <div class="grid">
-    <div class="card">
-      <div class="icon">📈</div>
-      <h3>Boost Player Engagement</h3>
-      <p><strong>Up to +25% Daily Active Users</strong><br>Keep players captivated and returning for more with mechanics designed for sustained interaction.</p>
-    </div>
-    <div class="card">
-      <div class="icon">💸</div>
-      <h3>Drive Higher Revenue</h3>
-      <p><strong>+15% Average Revenue Per User</strong><br>Encourage desired player behaviors and spending patterns through rewarding and compelling game loops.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🔄</div>
-      <h3>Increase Player Loyalty</h3>
-      <p><strong>Reduce Churn by up to 20%</strong><br>Foster a loyal player base that feels valued and motivated to stay active on your platform long-term.</p>
-    </div>
-  </div>
-</section>
+  </section>
   
-<section class="section" id="trusted-by">
-  <h2>Partners</h2>
-  <p class="subtext">Trusted by known market leaders and innovative platforms.</p>
-  <div class="grid">
-    <div class="partner">
-      <img src="https://i.ibb.co/NgkW87LC/22-Bet-logo1.png" alt="22Bet Logo" />
+  <section class="section" id="crm-compatibility">
+    <h2>Compatible with Leading CRM Platforms</h2>
+    <p class="subtext">We integrate smoothly with market leaders and your custom in-house solutions.</p>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); max-width:1000px; gap:30px; align-items:center; justify-content:center;">
+      <div class="partner"><div class="logo-wrapper"><img src="https://i.ibb.co/JwZ4sGSd/share-logo.png" alt="Fast Track CRM Logo" /></div></div>
+      <div class="partner"><img src="https://i.ibb.co/Ps123cmb/Salesforce-com-logo-svg.png" alt="Salesforce Logo" /></div>
+      <div class="partner"><div class="logo-wrapper"><img src="https://i.ibb.co/W457L3KG/smartico-logo.png" alt="Smartico Logo" /></div></div>
+      <div class="partner"><div class="logo-wrapper"><img src="https://i.ibb.co/7x2VFFbq/Optimove-Logo.png" alt="Optimove Logo" /></div></div>
+      <div class="partner"><div class="logo-wrapper"><img src="https://i.ibb.co/twDtfpK2/SVG-to-PNG-Intro.png" alt="EveryMatrix Logo" /></div></div>
+      <div class="partner partner-text"><span>Custom-made CRMs</span></div>
     </div>
-    <div class="partner">
-      <img src="https://i.ibb.co/zW3YLtfZ/Slotegrator-H-white2000.png" alt="Slotegrator Logo" />
+  </section>
+
+  <section class="section" id="trusted-by">
+    <h2>Partners</h2>
+    <p class="subtext">Trusted by known market leaders and innovative platforms.</p>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); max-width:1000px; gap:30px; align-items:center; justify-content:center;">
+      <div class="partner"><img src="https://i.ibb.co/NgkW87LC/22-Bet-logo1.png" alt="22Bet Logo" /></div>
+      <div class="partner"><img src="https://i.ibb.co/zW3YLtfZ/Slotegrator-H-white2000.png" alt="Slotegrator Logo" /></div>
+      <div class="partner"><img src="https://i.ibb.co/VWqTvf3f/bitz-1.png" alt="Bitz Logo" /></div>
+      <div class="partner"><img src="https://i.ibb.co/rGVPHwvH/Xanada-Horiz-02.png" alt="Xanada Logo" /></div>
+      <div class="partner"><img src="https://i.ibb.co/DPjw90pk/Softgaming-Logo.png" alt="SoftGamings Logo" /></div>
+      <div class="partner"><img src="https://i.ibb.co/B1XqCHw/Adwa-i-Gaming-Logo-1.png" alt="Adva Logo" /></div>
     </div>
-    <div class="partner">
-      <img src="https://i.ibb.co/VWqTvf3f/bitz-1.png" alt="Bitz Logo" /> 
-    </div>
-    <!-- START: New Partner Added -->
-    <div class="partner">
-      <img src="https://i.ibb.co/rGVPHwvH/Xanada-Horiz-02.png" alt="Xanada Logo" />
-    </div>
-    <!-- END: New Partner Added -->
-  </div>
-</section>
+  </section>
+
   <section class="section final-cta-section" id="final-cta">
-  <div class="container final-cta-container">
-    <h2 class="final-cta-title">Ready to Transform Your Player Experience?</h2>
-    <p class="subtext final-cta-subtext">
-      See Gamixter in action! Discover how our pre-built gamification mechanics
-      can be launched on your platform in under <strong>24 hours</strong>, boosting engagement and revenue.
-    </p>
-    <button class="primary-cta open-popup-trigger final-cta-button">
-      🚀 Request Your Personalized Demo
-    </button>
-  </div>
-</section>
+    <div class="container final-cta-container">
+      <h2 class="final-cta-title">Ready to Transform Your Player Experience?</h2>
+      <p class="subtext final-cta-subtext">See Gamixter in action and get an impact plan for your player base. Typical go‑live in <strong>under 24 hours</strong>.</p>
+      <button class="primary-cta open-popup-trigger final-cta-button">🚀 Request Your Personalized Demo</button>
+    </div>
+  </section>
   
-<footer class="footer">
-  <div class="footer-container"> <div class="footer-logo">
-      <img src="https://i.ibb.co/HD9hhfBM/Gamixter-Logo-White.png" alt="Gamixter Logo">
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo"><img src="https://i.ibb.co/HD9hhfBM/Gamixter-Logo-White.png" alt="Gamixter Logo"></div>
+      <div class="footer-links">
+        <a href="#how-it-works">How it Works</a>
+        <a href="#core-mechanics">Core Mechanics</a>
+        <a href="#ways-to-launch">Ways to launch</a>
+        <a href="#results">Results</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="#how-it-works">How it Works</a>
-      <a href="#core-mechanics">Core Mechanics</a>
-      <a href="#results">Results</a> <a href="#">Terms & Conditions</a> <a href="#">Privacy Policy</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© <span id="current-year"></span> Gamixter. All rights reserved.</p>
-  </div>
-</footer>
+    <div class="footer-bottom"><p>© <span id="current-year"></span> Gamixter. All rights reserved.</p></div>
+  </footer>
 
-<div id="popup-form" class="popup">
-  <div class="popup-content">
-    <button id="close-popup" class="close-popup">×</button>
-    <h2>Book a Demo</h2>
-    <form id="demo-form" action="https://usebasin.com/f/553146f392c9" method="POST"> 
-      <input type="hidden" name="_subject" value="New Demo Request from Gamixter Website!">
-      <div class="form-group">
-        <label for="company-name">Company Name</label>
-        <input type="text" id="company-name" name="company-name" required />
-      </div>
-      <div class="form-group">
-        <label for="your-name">Your Name</label>
-        <input type="text" id="your-name" name="your-name" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-      <div class="form-group">
-        <label for="site">Your Website</label> 
-        <input type="text" id="site" name="site" placeholder="example.com" required pattern=".*\..*" title="Please enter a valid domain name (e.g., example.com)">
-      </div>
-      <button type="submit" class="submit-btn">Submit Request</button>
-    </form>
-    <div id="form-status"></div>
-    <div id="thanks-message-container" class="thanks-popup-content" style="display: none;">
-        <!-- Content injected by JavaScript on successful submission -->
+  <div id="popup-form" class="popup">
+    <div class="popup-content">
+      <button id="close-popup" class="close-popup">×</button>
+      <h2>Book a Demo</h2>
+      <form id="demo-form" action="https://submit-form.com/zVAo6hQhL" method="POST">
+        <div class="form-group"><label for="company-name">Company Name</label><input type="text" id="company-name" name="company-name" required /></div>
+        <div class="form-group"><label for="your-name">Your Name</label><input type="text" id="your-name" name="your-name" required /></div>
+        <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required /></div>
+        <div class="form-group"><label for="site">Your Website</label><input type="text" id="site" name="site" placeholder="example.com" required pattern=".*\..*" title="Please enter a valid domain name (e.g., example.com)"></div>
+        <button type="submit" class="submit-btn">Submit Request</button>
+      </form>
+      <div id="form-status"></div>
+      <div id="thanks-message-container" class="thanks-popup-content" style="display: none;"></div>
     </div>
   </div>
-</div>
 
-<script>
-  const popup = document.getElementById("popup-form");
-  const openPopupButtons = document.querySelectorAll(".open-popup-trigger");
-  const closePopupButton = document.getElementById("close-popup");
-  const demoForm = document.getElementById('demo-form');
-  const formStatusDiv = document.getElementById('form-status');
-  const thanksMessageContainer = document.getElementById('thanks-message-container');
-  const popupTitleEl = popup.querySelector('.popup-content h2');
+  <script type="cd6484eb00b6e53b73f3fabe-text/javascript">
+    const popup = document.getElementById("popup-form");
+    const openPopupButtons = document.querySelectorAll(".open-popup-trigger");
+    const closePopupButton = document.getElementById("close-popup");
+    const demoForm = document.getElementById('demo-form');
+    const formStatusDiv = document.getElementById('form-status');
+    const thanksMessageContainer = document.getElementById('thanks-message-container');
+    const popupTitleEl = popup.querySelector('.popup-content h2');
 
-  openPopupButtons.forEach(button => {
-    button.addEventListener("click", (event) => {
-      event.preventDefault();
-      popup.style.display = "flex";
+    openPopupButtons.forEach(button => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        popup.style.display = "flex";
 
-      if (demoForm) {
+        if (demoForm) {
           demoForm.reset();
-          demoForm.style.display = 'block'; // Ensure form is visible
+          demoForm.style.display = 'block';
           const submitButton = demoForm.querySelector('.submit-btn');
-          if (submitButton) {
-              submitButton.disabled = false; // Re-enable button
-              // Consider resetting button text if it changes on submit
-          }
-      }
-      if (formStatusDiv) {
-          formStatusDiv.style.display = 'none';
-          formStatusDiv.className = ''; // Clear any error/success classes
-      }
-      if (thanksMessageContainer) {
-          thanksMessageContainer.style.display = 'none'; // Hide thanks message
-          thanksMessageContainer.innerHTML = ''; // Clear its content
-      }
-      if (popupTitleEl) {
-          popupTitleEl.textContent = 'Book a Demo'; // Reset title
-      }
-    });
-  });
-
-  if (closePopupButton) {
-    closePopupButton.addEventListener("click", () => {
-      popup.style.display = "none";
-    });
-  }
-
-  if (popup) {
-    popup.addEventListener("click", (event) => {
-      if (event.target === popup) {  
-        popup.style.display = "none";
-      }
-    });
-  }
-  
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && popup.style.display === 'flex') {
-      popup.style.display = 'none';
-    }
-  });
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href.length > 1 && document.querySelector(href)) { 
-        e.preventDefault();
-        document.querySelector(href).scrollIntoView({
-          behavior: 'smooth'
-        });
-      } else if (href === '#') { 
-        e.preventDefault();
-      }
-    });
-  });
-  
-  const currentYearSpan = document.getElementById('current-year');
-  if (currentYearSpan) {
-    currentYearSpan.textContent = new Date().getFullYear();
-  }
-
-  const cardsToAnimate = document.querySelectorAll('.card, .psychology-card');
-  const observerOptions = {
-    root: null,  
-    rootMargin: '0px',
-    threshold: 0.1  
-  };
-
-  const observerCallback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);  
-      }
-    });
-  };
-
-  const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
-
-  cardsToAnimate.forEach((card, index) => {
-    card.style.opacity = '0';  
-    card.style.transform = 'translateY(30px)';  
-    card.style.transition = 'opacity 0.6s ease-out ' + (index * 0.08) + 's, transform 0.6s ease-out ' + (index * 0.08) + 's';
-    scrollObserver.observe(card);
-  });
-
-  if (demoForm) {
-    demoForm.addEventListener('submit', function(event) {
-      event.preventDefault();  
-
-      const siteInput = document.getElementById('site');
-      let siteValue = siteInput.value.trim();
-      if (siteValue && !siteValue.startsWith('http://') && !siteValue.startsWith('https://')) {
-        siteValue = 'https://' + siteValue;
-      }
-      
-      const formData = new FormData(demoForm);
-      if (siteInput.value.trim() !== siteValue) { // Update FormData if we prefixed http/https
-        formData.set('site', siteValue);
-      }
-
-      const submitButton = demoForm.querySelector('.submit-btn');
-      const originalButtonText = submitButton.textContent;
-      
-      if (formStatusDiv) formStatusDiv.style.display = 'none'; 
-      if (thanksMessageContainer) thanksMessageContainer.style.display = 'none';
-      
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
-
-      fetch(demoForm.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'  
+          if (submitButton) submitButton.disabled = false;
         }
-      })
-      .then(response => {
-        if (response.ok) {
-          return response.json(); 
-        } else {
-          // Attempt to parse error JSON, then fall back
-          return response.json().then(errorData => {
-            let message = "Submission failed.";
-            if (errorData && errorData.errors && Object.keys(errorData.errors).length > 0) {
-                message = Object.values(errorData.errors).map(errArray => errArray.join(', ')).join('; ');
-            } else if (errorData && errorData.error) {
-                message = errorData.error;
-            } else if (errorData && errorData.message) {
-               message = errorData.message;
-            } else {
-              message = `Server error: ${response.status}. Please try again.`;
-            }
-            return Promise.reject(new Error(message));
-          }).catch(parsingError => { // Catch if response.json() fails or if it's not JSON
-              console.error("Failed to parse error JSON or non-JSON error response:", parsingError, response);
-              throw new Error(`Submission failed. Status: ${response.status}. Please try again.`);
-          });
-        }
-      })
-      .then(data => {  
-        if (data.success) { // Check for UseBasin's success flag
-            if (demoForm) demoForm.style.display = 'none'; // Hide the form
-            if (formStatusDiv) formStatusDiv.style.display = 'none'; // Hide the old status div
-
-            if (popupTitleEl) {
-                popupTitleEl.textContent = 'Thank You!'; // Change title
-            }
-
-            if (thanksMessageContainer) {
-                thanksMessageContainer.innerHTML = `
-                   <p>Your demo request has been sent successfully!</p>
-                   <p>To expedite the process and secure your spot, you can schedule a call with us directly:</p>
-                   <a href="https://calendar.notion.so/meet/abeyerbah/call" target="_blank" class="primary-cta">🗓️ Schedule Your Call</a>
-                   <p class="sub-message">We'll also be in touch via email shortly to confirm your request.</p>
-                `;
-                thanksMessageContainer.style.display = 'block'; // Show the thanks message
-            }
-            
-            // Track successful submission with Google Analytics
-            if (typeof gtag === 'function') {
-              gtag('event', 'demo_request_success', {
-                'event_category': 'Form Submission',
-                'event_label': 'Demo Request Sent'
-              });
-            }
-            
-        } else { // Handle cases where UseBasin returns success:false or other non-OK but JSON response
-            let errorMessage = "Submission failed. Please try again.";
-            if (data && data.errors && Object.keys(data.errors).length > 0) {
-                errorMessage = Object.values(data.errors).map(errArray => errArray.join(', ')).join('; ');
-            } else if (data && data.error) {
-                errorMessage = data.error;
-            } else if (data && data.message) {
-                 errorMessage = data.message;
-            }
-            
-            if (formStatusDiv) {
-                formStatusDiv.textContent = 'Error: ' + errorMessage;
-                formStatusDiv.className = 'error';  
-                formStatusDiv.style.display = 'block';
-            }
-        }
-      })
-      .catch(error => { // Catches network errors and errors from the .then(response => ...) Promise.reject
-        if (formStatusDiv) {
-            formStatusDiv.textContent = 'Error: ' + error.message;
-            formStatusDiv.className = 'error';  
-            formStatusDiv.style.display = 'block';
-        }
-      })
-      .finally(() => {
-        // Only re-enable the button and reset text if the form is still meant to be visible (i.e., an error occurred)
-        if (demoForm && demoForm.style.display !== 'none') {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-        }
+        if (formStatusDiv) { formStatusDiv.style.display = 'none'; formStatusDiv.className = ''; }
+        if (thanksMessageContainer) { thanksMessageContainer.style.display = 'none'; thanksMessageContainer.innerHTML = ''; }
+        if (popupTitleEl) popupTitleEl.textContent = 'Book a Demo';
       });
     });
-  }
-</script>
 
+    if (closePopupButton) closePopupButton.addEventListener("click", () => { popup.style.display = "none"; });
+    if (popup) popup.addEventListener("click", (event) => { if (event.target === popup) popup.style.display = "none"; });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && popup.style.display === 'flex') popup.style.display = 'none'; });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href.length > 1 && document.querySelector(href)) { 
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        } else if (href === '#') { e.preventDefault(); }
+      });
+    });
+    
+    const currentYearSpan = document.getElementById('current-year');
+    if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
+
+    const cardsToAnimate = document.querySelectorAll('.card, .psychology-card, .character-card, .partner');
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+    const observerCallback = (entries, observer) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; observer.unobserve(entry.target); } });
+    };
+    const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
+    cardsToAnimate.forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.4s ease-out ' + (index * 0.05) + 's, transform 0.4s ease-out ' + (index * 0.05) + 's';
+      scrollObserver.observe(card);
+    });
+
+    if (demoForm) {
+      demoForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const siteInput = document.getElementById('site');
+        let siteValue = siteInput.value.trim();
+        if (siteValue && !siteValue.startsWith('http://') && !siteValue.startsWith('https://')) siteValue = 'https://' + siteValue;
+        
+        const formData = new FormData(demoForm);
+        if (siteInput.value.trim() !== siteValue) formData.set('site', siteValue);
+        
+        const submitButton = demoForm.querySelector('.submit-btn');
+        const originalButtonText = submitButton.textContent;
+        
+        if (formStatusDiv) formStatusDiv.style.display = 'none';
+        if (thanksMessageContainer) thanksMessageContainer.style.display = 'none';
+        
+        submitButton.disabled = true; 
+        submitButton.textContent = 'Sending...';
+
+        fetch(demoForm.action, { 
+          method: 'POST', 
+          body: formData, 
+          headers: { 'Accept': 'application/json' } 
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            return response.json().then(errorData => {
+                let message = "Submission failed.";
+                if (errorData && errorData.message) {
+                    message = errorData.message;
+                } else {
+                    message = `Server error: ${response.status}. Please try again.`;
+                }
+                return Promise.reject(new Error(message));
+            });
+        })
+        .then(data => {  
+            if (demoForm) demoForm.style.display = 'none';
+            if (formStatusDiv) formStatusDiv.style.display = 'none';
+            if (popupTitleEl) popupTitleEl.textContent = 'Thank You!';
+            if (thanksMessageContainer) {
+                thanksMessageContainer.innerHTML = `
+                     <p>Your demo request has been sent successfully!</p>
+                     <p>To expedite the process and secure your spot, you can schedule a call with us directly:</p>
+                     <a href="https://calendar.notion.so/meet/abeyerbah/call" target="_blank" class="primary-cta">🗓️ Schedule Your Call</a>
+                     <p class="sub-message">We'll also be in touch via email shortly to confirm your request.</p>`;
+                thanksMessageContainer.style.display = 'block';
+            }
+            if (typeof gtag === 'function') {
+              gtag('event', 'demo_request_success', { 'event_category': 'Form Submission', 'event_label': 'Demo Request Sent' });
+            }
+        })
+        .catch(error => { 
+            if (formStatusDiv) { 
+                formStatusDiv.textContent = 'Error: ' + error.message; 
+                formStatusDiv.className = 'error'; 
+                formStatusDiv.style.display = 'block'; 
+            } 
+        })
+        .finally(() => { 
+            if (demoForm && demoForm.style.display !== 'none') { 
+                submitButton.disabled = false; 
+                submitButton.textContent = originalButtonText; 
+            } 
+        });
+      });
+    }
+  </script>
+
+  <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="cd6484eb00b6e53b73f3fabe-|49" defer></script>
 </body>
 </html>
