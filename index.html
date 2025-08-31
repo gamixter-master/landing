@@ -62,6 +62,24 @@
     .demo-cta-nav:hover{ color:#000; transform:scale(1.05); box-shadow:0 0 10px var(--accent-color-1);} 
 
     .hero{ padding:0; min-height:calc(100vh - 96px); display:flex; align-items:center; background:var(--bg); overflow:hidden; position:relative; }
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(0, 255, 163, 0.15) 0%, transparent 70%);
+        animation: glow-animation 15s linear infinite;
+        z-index: 1;
+    }
+
+    @keyframes glow-animation {
+        0% { transform: translate(-30vw, -30vh); }
+        50% { transform: translate(30vw, 30vh); }
+        100% { transform: translate(-30vw, -30vh); }
+    }
+
     .hero .container{ display:flex; flex-direction:row; align-items:center; justify-content:space-between; max-width:1200px; width:95%; margin:0 auto; padding:40px 20px; gap:30px; position:relative; z-index:2; }
     .hero .text-block{ flex:1 1 45%; max-width:580px; }
     .hero .text-block h1{ font-size:48px; font-weight:800; margin-bottom:18px; line-height:1.15; }
@@ -392,7 +410,7 @@
         <p class="microcopy">Used by casino and sportsbook operators and platforms.</p>
       </div>
       <div class="visual">
-        <img src="https://i.ibb.co/Xk7s56BD/mainscreen-1.png" alt="Gamixter Gamification UI Mockup" />
+        <img src="https://i.ibb.co/mr0mbj7S/Download-file-from-i-Love-IMG.png" alt="Gamixter Gamification UI Mockup" />
       </div>
     </div>
   </section>
@@ -763,7 +781,7 @@
         });
       });
     }
-    
+
     // Character card mobile tap functionality
     const characterCards = document.querySelectorAll('.character-card');
     characterCards.forEach(card => {
@@ -777,7 +795,6 @@
             }
         });
     });
-
   </script>
 
   <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="cd6484eb00b6e53b73f3fabe-|49" defer></script>
